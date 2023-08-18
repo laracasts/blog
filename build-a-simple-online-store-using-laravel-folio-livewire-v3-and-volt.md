@@ -4,7 +4,7 @@ What makes the Laravel ecosystem magical is that there are always new things to 
 
 **[Laravel Folio](https://github.com/laravel/folio) offers a file-based approach to defining routes.**
 
-**And [Laravel Volt](https://laravel.com/docs/volt) introduces single-file components and a new composition API to [Livewire v3](https://livewire.laravel.com).**
+**And [Laravel Volt](https://laravel.com/docs/volt) introduces single-file components and an optional new composition API to [Livewire v3](https://livewire.laravel.com).**
 
 Embracing these new principles can enhance your productivity and transform how you approach web applications with Laravel. Let me show you.
 
@@ -32,11 +32,15 @@ If you see Laravel's welcome page on http://127.0.0.1:8000, we can now start bri
 
 ## Install Laravel Folio
 
+Laravel Folio is a new approach to routing. Instead of declaring routes with lines of PHP, we create views following conventions.
+
+Let's start by installing the package:
+
 ```bash
 composer install laravel/folio:^1.0@beta
 ```
 
-Once done, we must add the Service Provider (from which you can customize Folio's behavior), and create the *pages* directory that will be used by Folio:
+Once done, we must add the Service Provider (from which you can customize Folio's behavior and add middlewares), and create the *pages* directory that will be used by Folio:
 
 ```bash
 php artisan folio:install
@@ -46,11 +50,21 @@ The new directory is located in *resources/views/pages*.
 
 ## Install Livewire v3 and Laravel Volt
 
-When added to a project, Laravel Volt also installs Livewire v3 since it's entirely dependent on it.
+Laravel Volt makes single-file components with Livewire v3 possible, and also adds an optional composition API.
+
+When added to a project, it also brings Livewire v3 since it's entirely dependent on it. Let's install it using the following command:
 
 ```bash
 composer install livewire/volt:^1.0@beta
 ```
+
+Then, we finalize the process by publishing Volt's Service Provider:
+
+```bash
+php artisan volt:install
+```
+
+Let's not worry about what's inside for now. We won't need to change anything for this project.
 
 ## Make sure Laravel Folio is operational
 

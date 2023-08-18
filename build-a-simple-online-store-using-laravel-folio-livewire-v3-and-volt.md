@@ -73,3 +73,15 @@ To create your first page, I suggest that you move and rename *resources/views/w
 Then, go into *routes/web.php* and remove the route declaration.
 
 Finally, visit http://127.0.0.1:8000. If you still see Laravel's welcome page, it means Folio is ready to be used.
+
+## Create the layout
+
+## Create your first Livewire component using Volt
+
+```bash
+php artisan make:volt Product
+```
+
+## Say goodbye to controllers with full-page Livewire components
+
+## Leverage anonymous Volt components for the cart's preview

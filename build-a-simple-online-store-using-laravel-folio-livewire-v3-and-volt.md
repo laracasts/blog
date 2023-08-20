@@ -6,7 +6,9 @@ What makes the Laravel ecosystem magical is that there are always new things to 
 
 **And [Laravel Volt](https://laravel.com/docs/volt) introduces single-file components and an optional new composition API to [Livewire v3](https://livewire.laravel.com).**
 
-Embracing these new principles can enhance your productivity and transform how you approach web applications with Laravel. Let me show you.
+Embracing these new principles can enhance your productivity and transform how you approach web applications with Laravel. Let me show you by building a simple online store.
+
+Before you start, check out [the live demo]().
 
 ## Create your new Dummy Store project
 
@@ -85,3 +87,9 @@ php artisan make:volt Product
 ## Say goodbye to controllers with full-page Livewire components
 
 ## Leverage anonymous Volt components for the cart's preview
+
+## Conclusion
+
+We saw how to orchestrate these three marvelous packages together and build something truly nice to use. You now have the basics knowledge to craft modern web applications without being proficient with JavaScript.
+
+Access the code of this tutorial on [GitHub]().

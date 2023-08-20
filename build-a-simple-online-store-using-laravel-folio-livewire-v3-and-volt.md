@@ -52,6 +52,8 @@ The new directory is located in *resources/views/pages*.
 
 ## Install Livewire v3 and Laravel Volt
 
+**If you never tried Livewire before, I suggest you to level up your skills first. Laravel Volt can't be of any use to you without Livewire.**
+
 Laravel Volt makes single-file components with Livewire v3 possible, and also adds an optional composition API.
 
 When added to a project, it also brings Livewire v3 since it's entirely dependent on it. Let's install it using the following command:
@@ -90,6 +92,6 @@ php artisan make:volt Product
 
 ## Conclusion
 
-We saw how to orchestrate these three marvelous packages together and build something truly nice to use. You now have the basics knowledge to craft modern web applications without being proficient with JavaScript.
+We saw how to orchestrate these three marvelous packages together and build something incredibly nice to use. You now have the basics knowledge to craft modern web applications quickly, without being proficient with JavaScript.
 
 Access the code of this tutorial on [GitHub]().

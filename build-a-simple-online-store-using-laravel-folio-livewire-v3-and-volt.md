@@ -99,7 +99,7 @@ php artisan make:volt Cart
 ```blade
 ```
 
-## Transform your app to a SPA using a single HTML attribute
+## Transform your app to a SPA with wire:navigate
 
 ```blade
 ```

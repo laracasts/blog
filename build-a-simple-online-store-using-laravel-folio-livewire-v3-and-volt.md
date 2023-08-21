@@ -80,7 +80,26 @@ Finally, visit http://127.0.0.1:8000. If you still see Laravel's welcome page, i
 
 ## Create the layout
 
+For the sake of simplicity, we will have the simplest layout ever. The code you see below is valid HTML that browsers can render. The Tailwind CSS CDN will enable us to skip all the boring compilation process of a normal project. As you may imagine, it's not recommended to do this is production.
+
 ```blade
+<html class="bg-gray-50 text-gray-600">
+    <title>{{ config('app.name') }}</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            container: {
+                center: true,
+                padding: '1rem',
+            },
+        }
+    </script>
+
+    <div class="container py-16">
+        {{ $slot }}
+    </div>
+</html>
 ```
 
 ## Create your first Livewire component using Volt

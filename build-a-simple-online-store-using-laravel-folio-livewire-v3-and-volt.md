@@ -108,4 +108,4 @@ php artisan make:volt Cart
 
 We saw how to orchestrate these three marvelous packages together and build something incredibly nice to use. You now have the basics knowledge to craft modern SPA-like web applications quickly, without being proficient with JavaScript.
 
-Access the code of this tutorial on [GitHub]().
+Access the code of this tutorial on [GitHub](https://github.com/benjamincrozat/laracasts-tutorial-01).

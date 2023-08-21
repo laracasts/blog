@@ -126,7 +126,7 @@ php artisan make:volt Cart
 
 Our online store already feels pretty good. But what if I tell you that we can make it even better wire the lowest amount of effort possible?
 
-Let's add the `wire:navigate` attribute on the link to the cart:
+Let's add the `wire:navigate` attribute on the link to the cart in *resources/views/pages/index.blade.php*:
 
 ```diff
 -<a href="/cart">
@@ -135,7 +135,7 @@ Let's add the `wire:navigate` attribute on the link to the cart:
 </a>
 ```
 
-Before you can see for yourself how it feels, don't forget the link that goes back to the homepage in the cart:
+Before you can see for yourself how it feels, don't forget the link that goes back to the homepage in *resources/views/pages/cart.blade.php*:
 
 ```diff
 -<a href="/">

@@ -1,10 +1,10 @@
 # Build a simple online store using Laravel Folio, Livewire v3, and Volt
 
-What makes the Laravel ecosystem magical is that there are always new things to learn and experiment with. Some of the latest additions to it are Laravel Folio and Laravel Volt.
+What makes the Laravel ecosystem magical is that there are always new things to learn and experiment with. Some of the latest additions to it are Laravel Folio and Volt.
 
 **[Laravel Folio](https://github.com/laravel/folio) offers a file-based approach to defining routes.**
 
-**And [Laravel Volt](https://laravel.com/docs/volt) introduces single-file components and an optional new composition API to [Livewire v3](https://livewire.laravel.com).**
+**And [Volt](https://laravel.com/docs/volt) introduces single-file components and an optional new composition API to [Livewire v3](https://livewire.laravel.com).**
 
 Embracing these new principles can enhance your productivity and transform how you approach web applications with Laravel. Let me show you by building a simple online store.
 
@@ -50,11 +50,11 @@ php artisan folio:install
 
 The new directory is located in *resources/views/pages*.
 
-## Install Livewire v3 and Laravel Volt
+## Install Livewire v3 and Volt
 
-**If you never tried Livewire before, I suggest you to level up your skills first. Laravel Volt can't be of any use to you without Livewire.**
+**If you never tried Livewire before, I suggest you to level up your skills first. Volt can't be of any use to you without Livewire.**
 
-Laravel Volt makes single-file components with Livewire v3 possible, and also adds an optional composition API.
+Volt makes single-file components with Livewire v3 possible, and also adds an optional composition API.
 
 When added to a project, it also brings Livewire v3 since it's entirely dependent on it. Let's install it using the following command:
 

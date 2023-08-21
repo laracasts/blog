@@ -8,7 +8,7 @@ What makes the Laravel ecosystem magical is that there are always new things to 
 
 Embracing these new principles can enhance your productivity and transform how you approach web applications with Laravel. Let me show you by building a simple online store.
 
-Before you start, check out [the live demo]().
+Before you start, check out [the live demo](https://dummy-store.benjamincrozat.com).
 
 ## Create your new Dummy Store project
 
@@ -108,4 +108,4 @@ php artisan make:volt Cart
 
 We saw how to orchestrate these three marvelous packages together and build something incredibly nice to use. You now have the basics knowledge to craft modern SPA-like web applications quickly, without being proficient with JavaScript.
 
-Access the code of this tutorial on [GitHub](https://github.com/benjamincrozat/laracasts-tutorial-01).
+[Access the code of this tutorial on GitHub.](https://github.com/benjamincrozat/dummy-store)

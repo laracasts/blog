@@ -89,15 +89,14 @@ Finally, visit http://127.0.0.1:8000. If you still see Laravel's welcome page, i
 php artisan make:volt Cart
 ```
 
-![CleanShot 2023-08-21 at 19 23 32@2x](https://github.com/laracasts/blog/assets/3613731/80e5e19b-6650-4645-8edf-a0b10f2ef0a4)
+![Cart](https://github.com/laracasts/blog/assets/3613731/d80217c4-1cf9-475c-9510-1b71668c8261)
 
 ## Create the homepage
 
 ```blade
 ```
 
-![CleanShot 2023-08-21 at 19 23 26@2x](https://github.com/laracasts/blog/assets/3613731/03ede65a-9016-47e4-a904-c8ced15d6020)
-
+![Homepage](https://github.com/laracasts/blog/assets/3613731/43a56451-aa5d-4e05-803d-8e4b4fdccd30)
 
 ## Leverage anonymous Volt components for small things
 

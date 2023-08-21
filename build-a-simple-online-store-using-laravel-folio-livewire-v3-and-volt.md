@@ -89,14 +89,10 @@ Finally, visit http://127.0.0.1:8000. If you still see Laravel's welcome page, i
 php artisan make:volt Cart
 ```
 
-![Cart](https://github.com/laracasts/blog/assets/3613731/d80217c4-1cf9-475c-9510-1b71668c8261)
-
 ## Create the homepage
 
 ```blade
 ```
-
-![Homepage](https://github.com/laracasts/blog/assets/3613731/43a56451-aa5d-4e05-803d-8e4b4fdccd30)
 
 ## Leverage anonymous Volt components for small things
 
@@ -105,8 +101,31 @@ php artisan make:volt Cart
 
 ## Transform your app to a SPA with wire:navigate
 
-```blade
+Our online store already feels pretty good. But what if I tell you that we can make it even better wire the lowest amount of effort possible?
+
+Let's add the `wire:navigate` attribute on the link to the cart:
+
+```diff
+-<a href="/cart">
++<a href="/cart" wire:navigate>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline-block mr-1 w-6 h-6 translate-y-[-2px]">…</svg>
+
+    <span class="font-bold">
+        {{ $count }}
+    </span>
+</a>
 ```
+
+Before you can see for yourself how it feels, don't forget the link that goes back to the homepage in the cart:
+
+```diff
+-<a href="/">
++<a href="/" wire:navigate>
+    ← Back
+</a>
+```
+
+Now, test this in your browser. That's the cherry on top, isn't it?
 
 ## Conclusion
 

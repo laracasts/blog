@@ -108,10 +108,14 @@ Create a file in _resources/views/components/layouts/app.blade.php_ and paste th
 php artisan make:volt Cart
 ```
 
+![Cart](https://github.com/laracasts/blog/assets/3613731/e147a291-6ef2-4dff-8271-35b31ccb245a)
+
 ## Create the homepage
 
 ```blade
 ```
+
+![Homepage](https://github.com/laracasts/blog/assets/3613731/eae2a9ac-38ac-42bd-8f34-e976b2242094)
 
 ## Leverage anonymous Volt components for small things
 

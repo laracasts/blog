@@ -80,18 +80,32 @@ Finally, visit http://127.0.0.1:8000. If you still see Laravel's welcome page, i
 
 ## Create the layout
 
+```blade
+```
+
 ## Create your first Livewire component using Volt
 
 ```bash
-php artisan make:volt Product
+php artisan make:volt Cart
 ```
 
-## Say goodbye to controllers with full-page Livewire components
+## Create the homepage
 
-## Leverage anonymous Volt components for the cart's preview
+```blade
+```
+
+## Leverage anonymous Volt components for small things
+
+```blade
+```
+
+## Transform your app to a SPA using a single HTML attribute
+
+```blade
+```
 
 ## Conclusion
 
-We saw how to orchestrate these three marvelous packages together and build something incredibly nice to use. You now have the basics knowledge to craft modern web applications quickly, without being proficient with JavaScript.
+We saw how to orchestrate these three marvelous packages together and build something incredibly nice to use. You now have the basics knowledge to craft modern SPA-like web applications quickly, without being proficient with JavaScript.
 
 Access the code of this tutorial on [GitHub]().

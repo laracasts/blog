@@ -108,11 +108,7 @@ Let's add the `wire:navigate` attribute on the link to the cart:
 ```diff
 -<a href="/cart">
 +<a href="/cart" wire:navigate>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline-block mr-1 w-6 h-6 translate-y-[-2px]">…</svg>
-
-    <span class="font-bold">
-        {{ $count }}
-    </span>
+    …
 </a>
 ```
 

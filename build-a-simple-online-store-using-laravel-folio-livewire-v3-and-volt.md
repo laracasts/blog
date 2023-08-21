@@ -72,15 +72,15 @@ Let's not worry about what's inside for now. We won't need to change anything fo
 
 ## Make sure Laravel Folio is operational
 
-To create your first page, I suggest that you move and rename *resources/views/welcome.blade.php* to *resources/views/pages/index.blade.php*.
+To create your first page, I suggest you remove *resources/views/welcome.blade.php* as well as the route declaration in *routes/web.php*. Thanks to Laravel Folio, we won't need that anymore.
 
-Then, go into *routes/web.php* and remove the route declaration.
-
-Finally, visit http://127.0.0.1:8000. If you still see Laravel's welcome page, it means Folio is ready to be used.
+Finally, visit http://127.0.0.1:8000 (make sure `php artisan serve` is still running). If you see a blank page, it means Folio is ready to be used.
 
 ## Create the layout
 
 For the sake of simplicity, we will have the simplest layout ever. The code you see below is valid HTML that browsers can render. The Tailwind CSS CDN will enable us to skip all the boring compilation process of a normal project. As you may imagine, it's not recommended to do this is production.
+
+Create a file in _resources/views/components/layouts/app.blade.php_ and paste this code:
 
 ```blade
 <html class="bg-gray-50 text-gray-600">

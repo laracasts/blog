@@ -78,7 +78,7 @@ Finally, visit http://127.0.0.1:8000 (make sure `php artisan serve` is still run
 
 ## Create the layout
 
-For the sake of simplicity, we will have the simplest layout ever. The code you see below is valid HTML that browsers can render. The Tailwind CSS CDN will enable us to skip all the boring compilation process of a normal project. As you may imagine, it's not recommended to do this is production.
+For the sake of simplicity, we will have the simplest layout ever. The code you see below is valid HTML that browsers can render. The [Tailwind CSS Play CDN](https://tailwindcss.com/docs/installation/play-cdn) will enable us to skip all the boring compilation process of a normal project. As you may imagine, it's not recommended to do this is production.
 
 Create a file in _resources/views/components/layouts/app.blade.php_ and paste this code:
 

@@ -239,6 +239,16 @@ In this component:
 
 ## Create the cart preview component
 
+The cart preview component will be a mini representation of the user's shopping cart, allowing them to quickly view how many items they've added without navigating to the cart page.
+
+Here's how we can create it:
+
+```bash
+php artisan make:volt CartPreview
+````
+
+Now, edit _resources/views/pages/cart-preview.blade.php_:
+
 ```blade
 <?php
 
@@ -260,6 +270,11 @@ on(['product-added-to-cart' => function () {
     </span>
 </a>
 ```
+
+In this component:
+1. We keep track of the number of items in the cart using a state variable (`count`). The initial value equals whatever is currently in the cache.
+2. A listener waits for the `product-added-to-cart` event to update the count.
+3. The UI displays the current value of `count`.
 
 ## Create the homepage
 

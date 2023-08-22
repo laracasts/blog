@@ -52,7 +52,7 @@ The new directory is *resources/views/pages*.
 
 ## Install Livewire v3 and Volt
 
-**If you never tried Livewire before, I suggest you to level up your skills first. Volt can't be of any use to you without Livewire.**
+**If you've never tried Livewire before, I suggest leveling up your skills first. Volt can't be of any use to you without Livewire.**
 
 Volt makes single-file components with Livewire v3 possible, and also adds an optional composition API.
 
@@ -78,7 +78,7 @@ Finally, visit http://127.0.0.1:8000 (make sure `php artisan serve` is still run
 
 ## Create the layout
 
-For the sake of simplicity, we will have the simplest layout ever. The code you see below is valid HTML that browsers can render. The [Tailwind CSS Play CDN](https://tailwindcss.com/docs/installation/play-cdn) will enable us to skip all the boring compilation process of a normal project. As you may imagine, it's not recommended to do this is production.
+For the sake of simplicity, we'll use a very basic layout. The code you see below is valid HTML that browsers can render. The [Tailwind CSS Play CDN](https://tailwindcss.com/docs/installation/play-cdn) will enable us to skip all the boring compilation process of a normal project. As you may imagine, it's not recommended to do this is production.
 
 Create a file in _resources/views/components/layouts/app.blade.php_ and paste this code:
 
@@ -268,7 +268,7 @@ on(['product-added-to-cart' => function () {
 
 ## Transform your app into a SPA with wire:navigate
 
-Our online store already feels pretty good. But what if I tell you that we can make it even better with the lowest amount of effort possible? Livewire v3 comes with a new HTML attribute named [`wire:navigate`](https://livewire.laravel.com/docs/navigate#basic-usage). When used, it will only fetch the new HTML and replace the current one, instead of reloading the whole page.
+Our online store is already quite impressive. But what if I told you we could enhance it with minimal effort? Livewire v3 comes with a new HTML attribute named [`wire:navigate`](https://livewire.laravel.com/docs/navigate#basic-usage). When used, it will only fetch the new HTML and replace the current one, instead of reloading the whole page.
 
 Let's add the `wire:navigate` attribute on the link to the cart in *resources/views/livewire/cart-preview.blade.php*:
 

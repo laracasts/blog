@@ -171,7 +171,7 @@ $remove = function () {
 Let's break down the code:
 
 1. **Laravel Folio automatically created a route for the cart**. Again, you can see it by running `php artisan folio:list`.
-2. **The component is wrapped inside the `@volt` directive.**
+2. **The component is wrapped inside the `@volt` directive instead of a distinct file inside _resources/views/livewire_. That makes it an anonymous component.**
 3. Instead of setting up a database, migrations, models, factories, etc., we use the cache to store the number of items. That way, we can focus on learning.
 4. The items are randomly generated using the `fake()` helper. This is a huge gain of time.
 5. I provided a basic layout with a button to remove the items. **When clicked, it calls a Livewire method named `remove()`**. Using Volt's new declarative API, it's just a closure inside a variable.
@@ -181,25 +181,96 @@ Let's break down the code:
 
 ![Cart](https://github.com/laracasts/blog/assets/3613731/e147a291-6ef2-4dff-8271-35b31ccb245a)
 
-Makes sense? Now, we can start building the homepage.
+Makes sense? Now, we can start building the homepage and its components, because we still can't add products into our cart!
+
+## Create the item component
+
+```blade
+<?php
+
+use function Livewire\Volt\state;
+
+state('done', false);
+
+$add = function () {
+    $this->dispatch('product-added-to-cart');
+
+    $this->done = true;
+};
+
+?>
+
+<div>
+    <img src="https://via.placeholder.com/512x512.png/f3f4f6" />
+
+    <div class="flex items-start justify-between mt-4">
+        <div>
+            <div>{{ fake()->sentence(2) }}</div>
+            <div class="text-2xl font-bold">${{ rand(10, 100) }}</div>
+        </div>
+
+        <button
+            class="px-3 py-2 text-sm font-bold text-white bg-blue-600 rounded disabled:bg-gray-200 disabled:text-gray-400"
+            @if ($done) disabled @endif
+            wire:click="add"
+        >
+            @if ($done)
+                Added
+            @else
+                Add
+            @endif
+        </button>
+    </div>
+</div>
+```
+
+## Create the cart preview component
+
+```blade
+<?php
+
+use function Livewire\Volt\{on,state};
+
+state('count', fn () => cache()->get('count', 0));
+
+on(['product-added-to-cart' => function () {
+    cache()->put('count', ++$this->count);
+}]);
+
+?>
+
+<a href="/cart" wire:navigate>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline-block mr-1 w-6 h-6 translate-y-[-2px]"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg>
+
+    <span class="font-bold">
+        {{ $count }}
+    </span>
+</a>
+```
 
 ## Create the homepage
 
 ```blade
+<x-layouts.app>
+    <div class="text-right">
+        <livewire:cart-preview />
+    </div>
+
+    <div class="grid grid-cols-3 gap-8 mt-8">
+        @foreach (range(1, 9) as $item)
+            <livewire:item />
+        @endforeach
+    </div>
+</x-layouts.app>
 ```
 
 ![Homepage](https://github.com/laracasts/blog/assets/3613731/eae2a9ac-38ac-42bd-8f34-e976b2242094)
 
-## Leverage anonymous Volt components for small things
-
-```blade
-```
-
 ## Transform your app to a SPA with wire:navigate
 
-Our online store already feels pretty good. But what if I tell you that we can make it even better wire the lowest amount of effort possible?
+Our online store already feels pretty good. But what if I tell you that we can make it even better with the lowest amount of effort possible?
 
-Let's add the `wire:navigate` attribute on the link to the cart in *resources/views/pages/index.blade.php*:
+Let's add the `wire:navigate` attribute on the link to the cart in *resources/views/livewire/cart-preview.blade.php*:
 
 ```diff
 -<a href="/cart">

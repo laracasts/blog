@@ -48,7 +48,7 @@ Once done, we must add the Service Provider (from which you can customize Folio'
 php artisan folio:install
 ```
 
-The new directory is located in *resources/views/pages*.
+The new directory is *resources/views/pages*.
 
 ## Install Livewire v3 and Volt
 
@@ -74,7 +74,7 @@ Let's not worry about what's inside for now. We won't need to change anything fo
 
 To create your first page, I suggest you remove *resources/views/welcome.blade.php* as well as the route declaration in *routes/web.php*. Thanks to Laravel Folio, we won't need that anymore.
 
-Finally, visit http://127.0.0.1:8000 (make sure `php artisan serve` is still running). If you see a blank page, it means Folio is ready to be used.
+Finally, visit http://127.0.0.1:8000 (make sure `php artisan serve` is still running). If you see a blank page, it means Folio is ready to be used. You can also run the command `php artisan folio:list` to see if the homepage has been registered.
 
 ## Create the layout
 
@@ -104,11 +104,84 @@ Create a file in _resources/views/components/layouts/app.blade.php_ and paste th
 
 ## Create your first Livewire component using Volt
 
+Let's start by creating the main component of our online store: the cart. Inside, we will simply list the products that have been added to it and give the ability to users to remove them without ever having to reload the page.
+
 ```bash
 php artisan make:volt Cart
 ```
 
+This command will create a new component in _resources/views/pages/cart.blade.php_. Unlike the traditional way of using Livewire, we don't need a separate PHP class, which speeds up the process and simplifies the codebase.
+
+```blade
+<?php
+
+use function Livewire\Volt\state;
+
+state('count', fn () => cache()->get('count', 0));
+
+$remove = function () {
+    if ($this->count > 0) {
+        cache()->put('count', --$this->count);
+    }
+};
+
+?>
+
+<x-layouts.app>
+    @volt
+        <div>
+            <div>
+                <a href="/">
+                    ← Back
+                </a>
+            </div>
+
+            @if ($count)
+                <div class="grid gap-8 mt-8">
+                    @foreach (range(1, cache()->get('count')) as $item)
+                        <div class="flex items-center justify-between gap-4">
+                            <div class="flex items-center gap-4">
+                                <img src="https://via.placeholder.com/256x256.png/f3f4f6" width="128" height="128" />
+
+                                <div>
+                                    <div>{{ fake()->sentence(2) }}</div>
+                                    <div class="font-bold text-2xl">${{ rand(10, 100) }}</div>
+                                </div>
+                            </div>
+
+                            <button
+                                class="bg-red-400 text-white rounded py-2 px-3 text-sm font-bold"
+                                wire:click="remove"
+                            >
+                                Remove
+                            </button>
+                        </div>
+                    @endforeach
+                </div>
+            @else
+                <p class="mt-16 font-light text-center text-3xl">
+                    Your cart is empty.
+                </p>
+            @endif
+        </div>
+    @endvolt
+</x-layouts.app>
+```
+
+Let's break down the code:
+
+1. **Laravel Folio automatically created a route for the cart**. Again, you can see it by running `php artisan folio:list`.
+2. **The component is wrapped inside the `@volt` directive.**
+3. Instead of setting up a database, migrations, models, factories, etc., we use the cache to store the number of items. That way, we can focus on learning.
+4. The items are randomly generated using the `fake()` helper. This is a huge gain of time.
+5. I provided a basic layout with a button to remove the items. **When clicked, it calls a Livewire method named `remove()`**. Using Volt's new declarative API, it's just a closure inside a variable.
+6. **The Livewire code is defined between PHP tags.** You cannot use the `@php` directive for setting up anything related to Volt.
+7. **We define the initial state of `$count` using the `state()` helper.** It contains a closure that fetches the value from the cache.
+8. In the remove() method, we make sure the count is greater than 0 before decrementing it. Then, we store the new value in the cache.
+
 ![Cart](https://github.com/laracasts/blog/assets/3613731/e147a291-6ef2-4dff-8271-35b31ccb245a)
+
+Makes sense? Now, we can start building the homepage.
 
 ## Create the homepage
 

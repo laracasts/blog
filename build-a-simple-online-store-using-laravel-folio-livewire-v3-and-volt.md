@@ -327,4 +327,9 @@ Now, test this in your browser. That's the cherry on top, isn't it?
 
 We've explored how to integrate these three powerful packages to create a user-friendly online store. You now have the basic knowledge needed to craft modern SPA-like web applications quickly, even without being proficient in JavaScript.
 
+If you want to spend more time on this code, here are a few areas of improvement:
+- Make all the components anonymous. They're still small, so why split them into multiple files? [Learn more on the official documentation.](https://livewire.laravel.com/docs/volt#anonymous-components)
+- Write tests for the components. [Learn more on the official documentation.](https://livewire.laravel.com/docs/volt#testing-components)
+- Volt components can also be used with the traditionnal [class-based API](https://livewire.laravel.com/docs/volt#class-based-volt-components). You can experiment with that too!
+
 [Access the code of this tutorial on GitHub.](https://github.com/benjamincrozat/dummy-store)

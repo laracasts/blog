@@ -6,7 +6,7 @@ What makes the Laravel ecosystem magical is that there are always new things to 
 
 **And [Volt](https://laravel.com/docs/volt) introduces single-file components and an optional new composition API to [Livewire v3](https://livewire.laravel.com).**
 
-Embracing these new principles can enhance your productivity and transform how you approach web applications with Laravel. Let me show you by building a simple online store.
+Embracing these new tools and principles can enhance your productivity and transform how you build web applications with Laravel. Let me show you by building a simple online store.
 
 Before you start, check out [the live demo](https://dummy-store.benjamincrozat.com).
 
@@ -70,7 +70,7 @@ php artisan volt:install
 
 Let's not worry about what's inside for now. We won't need to change anything for this project.
 
-## Make sure Laravel Folio is operational
+## Make sure that Laravel Folio is operational
 
 To create your first page, I suggest you remove *resources/views/welcome.blade.php* as well as the route declaration in *routes/web.php*. Thanks to Laravel Folio, we won't need that anymore.
 
@@ -172,9 +172,9 @@ Let's break down the code:
 
 1. **Laravel Folio automatically created a route for the cart**. Again, you can see it by running `php artisan folio:list`.
 2. **The component is wrapped inside the `@volt` directive instead of a distinct file inside _resources/views/livewire_. That makes it an anonymous component.**
-3. Instead of setting up a database, migrations, models, factories, etc., we use the cache to store the number of items. That way, we can focus on learning.
+3. Instead of setting up a database, migrations, models, factories, etc., we use the cache to store the number of items. That way, we can focus on learning. Obviously, this isn't how you would do it in production.
 4. The items are randomly generated using the `fake()` helper. This is a huge gain of time.
-5. I provided a basic layout with a button to remove the items. **When clicked, it calls a Livewire method named `remove()`**. Using Volt's new declarative API, it's just a closure inside a variable.
+5. I provided a basic layout with a button to remove the items. **When clicked, it calls a Livewire method named `remove()`**. In Volt's new declarative API, we define the "remove" method as a closure inside a variable.
 6. **The Livewire code is defined between PHP tags.** You cannot use the `@php` directive for setting up anything related to Volt.
 7. **We define the initial state of `$count` using the `state()` helper.** It contains a closure that fetches the value from the cache.
 8. In the remove() method, we make sure the count is greater than 0 before decrementing it. Then, we store the new value in the cache.
@@ -245,7 +245,7 @@ Here's how we can create it:
 
 ```bash
 php artisan make:volt CartPreview
-````
+```
 
 Now, edit _resources/views/pages/cart-preview.blade.php_:
 
@@ -325,6 +325,6 @@ Now, test this in your browser. That's the cherry on top, isn't it?
 
 ## Conclusion
 
-We saw how to orchestrate these three marvelous packages together and build something incredibly nice to use. You now have the basics knowledge to craft modern SPA-like web applications quickly, without being proficient with JavaScript.
+We saw how to orchestrate these three marvelous packages together and build something incredibly nice to use. You now have the basic knowledge needed to craft modern SPA-like web applications quickly, even without being proficient in JavaScript.
 
 [Access the code of this tutorial on GitHub.](https://github.com/benjamincrozat/dummy-store)

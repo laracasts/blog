@@ -185,6 +185,14 @@ Makes sense? Now, we can start building the homepage and its components, because
 
 ## Create the item component
 
+Our next step is to create an item component. It represents individual products available for purchase in our store.
+
+```bash
+php artisan make:volt Item
+```
+
+Once the command executes, navigate to _resources/views/pages/item.blade.php_ and add this code:
+
 ```blade
 <?php
 
@@ -201,7 +209,7 @@ $add = function () {
 ?>
 
 <div>
-    <img src="https://via.placeholder.com/512x512.png/f3f4f6" />
+    <img src="https://via.placeholder.com/512x512.png/f3f4f6" alt="Product Image" />
 
     <div class="flex items-start justify-between mt-4">
         <div>
@@ -217,12 +225,17 @@ $add = function () {
             @if ($done)
                 Added
             @else
-                Add
+                Add to Cart
             @endif
         </button>
     </div>
 </div>
 ```
+
+In this component:
+1. We have a "Add to Cart" button that calls the `add()` method when clicked.
+2. Then, a state variable named `$done` is set to `true` to disable the button and display a "Added" message instead.
+3. The `add()` function dispatches an event that indicates a product has been added. The component that waits for this event (the cart preview) will increment the value in the cache (that's what we'll do in the next step).
 
 ## Create the cart preview component
 
@@ -267,7 +280,7 @@ The homepage is the simplest piece of code we'll have to write. It's just laying
 ```
 
 1. This is a simple Blade component.
-2. We create an array of 9 items using the `range()` function to be able to display 9 items. Remember, they're all randomly generated.
+2. We create an array of 9 items using the [`range()`](https://www.php.net/range) function to be able to display 9 items. Remember, they're all randomly generated.
 
 ![Homepage](https://github.com/laracasts/blog/assets/3613731/eae2a9ac-38ac-42bd-8f34-e976b2242094)
 

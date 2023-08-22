@@ -250,6 +250,8 @@ on(['product-added-to-cart' => function () {
 
 ## Create the homepage
 
+The homepage is the simplest piece of code we'll have to write. It's just laying out the components we wrote earlier. Put the following code in _resources/views/pages/index.blade.php_:
+
 ```blade
 <x-layouts.app>
     <div class="text-right">
@@ -263,6 +265,9 @@ on(['product-added-to-cart' => function () {
     </div>
 </x-layouts.app>
 ```
+
+1. This is a simple Blade component.
+2. We create an array of 9 items using the `range()` function to be able to display 9 items. Remember, they're all randomly generated.
 
 ![Homepage](https://github.com/laracasts/blog/assets/3613731/eae2a9ac-38ac-42bd-8f34-e976b2242094)
 

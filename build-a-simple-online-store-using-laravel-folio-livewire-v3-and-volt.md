@@ -266,9 +266,9 @@ on(['product-added-to-cart' => function () {
 
 ![Homepage](https://github.com/laracasts/blog/assets/3613731/eae2a9ac-38ac-42bd-8f34-e976b2242094)
 
-## Transform your app to a SPA with wire:navigate
+## Transform your app into a SPA with wire:navigate
 
-Our online store already feels pretty good. But what if I tell you that we can make it even better with the lowest amount of effort possible?
+Our online store already feels pretty good. But what if I tell you that we can make it even better with the lowest amount of effort possible? Livewire v3 comes with a new HTML attribute named [`wire:navigate`](https://livewire.laravel.com/docs/navigate#basic-usage). When used, it will only fetch the new HTML and replace the current one, instead of reloading the whole page.
 
 Let's add the `wire:navigate` attribute on the link to the cart in *resources/views/livewire/cart-preview.blade.php*:
 

@@ -185,7 +185,7 @@ Makes sense? Now, we can start building the homepage and its components, because
 
 ## Create the item component
 
-Our next step is to create an item component. It represents individual products available for purchase in our store.
+Our next step is to create an "item" component. It represents individual products available for purchase in our store.
 
 ```bash
 php artisan make:volt Item
@@ -325,6 +325,6 @@ Now, test this in your browser. That's the cherry on top, isn't it?
 
 ## Conclusion
 
-We saw how to orchestrate these three marvelous packages together and build something incredibly nice to use. You now have the basic knowledge needed to craft modern SPA-like web applications quickly, even without being proficient in JavaScript.
+We've explored how to integrate these three powerful packages to create a user-friendly online store. You now have the basic knowledge needed to craft modern SPA-like web applications quickly, even without being proficient in JavaScript.
 
 [Access the code of this tutorial on GitHub.](https://github.com/benjamincrozat/dummy-store)

@@ -8,6 +8,8 @@ The definition of clean code is subjective. It's often a source of heated debate
 
 ## Automatic Injection
 
+## Redirect Routes
+
 ## View Routes
 
 ## Collections

@@ -4,12 +4,14 @@ The definition of clean code is subjective. It's often a source of heated debate
 
 ## Facades
 
-## Collections
-
-## The Conditionable Trait
-
 ## Implicit Binding
 
 ## Automatic Injection
 
 ## View Routes
+
+## Collections
+
+## The Conditionable Trait
+
+## Numerous First-Party Packages

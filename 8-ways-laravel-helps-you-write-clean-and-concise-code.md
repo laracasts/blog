@@ -35,7 +35,7 @@ class FooController extends Controller
 }
 ```
 
-It's called Dependency Injection. Some people are comfortable with this pattern, but others might want to move forward on their projects and use something simpler in the meantime, like Facades:
+It's called Dependency Injection. Some people are comfortable with this pattern and it's perfectly fine to do it that way. But others, less familiar with it, might want to move forward on their projects and use something simpler in the meantime, like Facades:
 
 ```php
 <?php
@@ -95,7 +95,39 @@ Learn more on the official documentation: https://laravel.com/docs/routing#impli
 
 ## Redirect Routes
 
+Laravel's router contains a few surprises that will delight people who are always looking to unclutter their code.
+
+For instance, let's say you want to redirect an old URL to a new one. Would you create an entire controller just for this? I don't know about you, but I wouldn't. Here's one way you can do it:
+
+```php
+Route::get('/old', function () {
+    return redirect('/new');
+});
+```
+
+Or even shorter thanks to short closures:
+
+```php
+Route::get('/old', fn () => redirect('/new'));
+```
+
+You can even go a step further and use a more explicit way of doing it:
+
+```php
+Route::redirect('/old', '/new');
+```
+
+Cool, huh?
+
 ## View Routes
+
+In the same vein, Laravel can also accommodate you when you only want to create a route that serves a simple view. Instead of creating a controller or a closure-based route, use the `view()` method instead:
+
+```php
+Route::redirect('/about', 'pages.about');
+```
+
+The */about* path will now serve the view located in _resources/views/pages/about_.
 
 ## Collections
 

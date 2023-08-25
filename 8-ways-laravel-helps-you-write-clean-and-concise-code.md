@@ -53,7 +53,43 @@ class FooController extends Controller
 
 Oh, and before you skip to the next section, beware that using the `cache()` helper function is the same as calling the `Cache` Facade. Let's say it's just a matter of preference.
 
+Learn more on the official documentation: https://laravel.com/docs/10.x/facades#how-facades-work
+
 ## Implicit Binding
+
+Instead of manually fetching resources in the database, why don't you delegate it to Laravel?
+
+It happens in your *routes/web.php* file. You must change your way of declaring routes as follows:
+
+```diff
+-Route::get('/blog/{id}', [PostController::class, 'show']);
++Route::get('/blog/{post}', [PostController::class, 'show']);
+```
+
+Then, as long as you specified the `{post}` parameter (named after your Model) in your route declaration, you can get the Post resource directly, without explicitly requesting it from your database:
+
+```diff
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Post;
+
+class PostController extends Controller
+{
+-   public function show(int $id)
++   public function show(Post $post)
+    {
+-       $post = Post::findOrFail($id);
+-
+        return view('posts.show', compact('post'));
+    }
+}
+```
+
+Obviously, under the hood, Laravel does request your database. But your code now looks decluttered and cleaner.
+
+Learn more on the official documentation: https://laravel.com/docs/routing#implicit-binding
 
 ## Automatic Injection
 

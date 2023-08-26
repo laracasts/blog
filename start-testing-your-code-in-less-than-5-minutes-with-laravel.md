@@ -6,4 +6,4 @@
 
 ## Create a new test
 
-## The case of existing projects
+## The case of untested existing projects

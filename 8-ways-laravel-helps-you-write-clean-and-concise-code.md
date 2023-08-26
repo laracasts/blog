@@ -124,7 +124,7 @@ Cool, huh?
 In the same vein, Laravel can also accommodate you when you only want to create a route that serves a simple view. Instead of creating a controller or a closure-based route, use the `view()` method instead:
 
 ```php
-Route::redirect('/about', 'pages.about');
+Route::view('/about', 'pages.about');
 ```
 
 The */about* path will now serve the view located in _resources/views/pages/about_.

@@ -93,6 +93,26 @@ Learn more on the official documentation: https://laravel.com/docs/routing#impli
 
 ## Automatic Injection
 
+Laravel can magically inject dependencies into your code. OK, let me explain, because this sounds way more complicated than it is.
+
+You surely have delt with a request object in Laravel, right? And I bet you never had to create the instance yourself. Most of the time, you get it via your controller this way:
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+class PostController extends Controller
+{
+    public function store(Request $request)
+    {
+        //
+    }
+}
+```
+
+But how does it work? Again, it's not magic. Using [PHP's reflection capabilities](https://www.php.net/manual/en/book.reflection.php) under the hood, Laravel automatically injects an instance of whatever you typehinted in your `store()` method.
+
 ## Redirect Routes
 
 Laravel's router contains a few surprises that will delight people who are always looking to unclutter their code.
@@ -130,6 +150,24 @@ Route::view('/about', 'pages.about');
 The */about* path will now serve the view located in _resources/views/pages/about_.
 
 ## Collections
+
+[Collections](https://laravel.com/docs/collections) in Laravel are essentially a wrapper around arrays, providing a whole bunch of really useful methods for manipulating them.
+
+Want to loop through an array? Wrap it in a collection and use a more modern object-oriented syntax to do so:
+
+```php
+collect([1, 2, 3])->each(function ($item) {
+    //
+});
+```
+
+Want to all the user's invoices by email? Use higher-order messages to keep your code tidy:
+
+```php
+$user->invoices()->get()->each->sendByEmail();
+```
+
+Not only collections are more readable and concise, but also more intuitive. You will never ask yourself if the needle comes first or not again!
 
 ## The Conditionable Trait
 

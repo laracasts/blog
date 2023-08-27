@@ -113,6 +113,29 @@ class PostController extends Controller
 
 But how does it work? Again, it's not magic. Using [PHP's reflection capabilities](https://www.php.net/manual/en/book.reflection.php) under the hood, Laravel automatically injects an instance of whatever you typehinted in your `store()` method.
 
+If you really want to, you can even make it happen in the constructor:
+
+```php
+<?php
+
+namespace App\Http\Controllers;
+
+class PostController extends Controller
+{
+    public function __construct(
+        public Request $request
+    ) {
+    }
+
+    public function store()
+    {
+        // $this->request;
+    }
+}
+```
+
+This not only works in controllers, but also in console commands, jobs, or whatever else you'd need to.
+
 ## Redirect Routes
 
 Laravel's router contains a few surprises that will delight people who are always looking to unclutter their code.

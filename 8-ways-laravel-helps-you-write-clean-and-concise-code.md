@@ -194,6 +194,30 @@ Not only collections are more readable and concise, but also more intuitive. You
 
 ## The Conditionable Trait
 
+The Conditionable trait is a very simple piece of code that contains only two methods: `when()`, and `unless()`.
+
+```php
+namespace Illuminate\Support\Traits;
+
+use Closure;
+use Illuminate\Support\HigherOrderWhenProxy;
+
+trait Conditionable
+{
+    public function when($value = null, callable $callback = null, callable $default = null)
+    {
+        …
+    }
+
+    public function unless($value = null, callable $callback = null, callable $default = null)
+    {
+        …
+    }
+}
+```
+
+It's used accross may classes in the framework such as `Factory`, `Filesystem`, `Logger`, `PendingRequest`, `Carbon`, and many others.
+
 ## Numerous First-Party Packages
 
 One of the greatest strengths of Laravel we still haven't talked about is its vast collection of [first](https://laravel.com/docs) and [third-party packages](https://packagist.org).

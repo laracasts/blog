@@ -184,7 +184,7 @@ collect([1, 2, 3])->each(function ($item) {
 });
 ```
 
-Want to all the user's invoices by email? Use higher-order messages to keep your code tidy:
+Want to send the user's invoices by email? Use higher-order messages to keep your code tidy:
 
 ```php
 $user->invoices()->get()->each->sendByEmail();

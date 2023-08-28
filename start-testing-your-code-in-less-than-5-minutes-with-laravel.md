@@ -35,7 +35,7 @@ Run your tests using the following command:
 php artisan test
 ```
 
-Everything should be green. If not, don't be discouraged. Spending some time in making sure your environment is correctly configured is a great investment.
+Everything should be green. And if your environment was properly working, I bet 5 minutes was more than enough! If not, don't be discouraged. Spending some time in making sure your environment is correctly configured is a great investment.
 
 Now, any moment something breaks during the process of rendering the home page, the test will fail. Try to change some code incorrectly, run `php artisan test` again, and you will see it for yourself.
 

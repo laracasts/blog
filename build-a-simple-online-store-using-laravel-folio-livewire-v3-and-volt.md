@@ -70,7 +70,7 @@ php artisan volt:install
 
 Since we want to leverage Laravel Folio to its fullest, go into VoltServiceProvider and remove the following line:
 
-```php
+```diff
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;

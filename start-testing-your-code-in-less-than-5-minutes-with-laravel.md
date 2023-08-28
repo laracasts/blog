@@ -1,4 +1,4 @@
-# Start Testing Your Code in Less Than 5 Minutes with Laravel
+# Start testing your code in less than 5 minutes with Laravel
 
 Coding is fun, but debugging? Not so much. That's why testing is crucial for the success of your project. I will show you how easy it is to start testing your Laravel applications. Let's break the ice once and for all!
 

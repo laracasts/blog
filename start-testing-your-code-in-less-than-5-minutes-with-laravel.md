@@ -8,7 +8,7 @@ Writing tests for your projects is essential for various reasons:
 
 - **Fix basic bugs**: Before they ruin the experience for your users, you can catch and fix basic bugs during the development phase.
 - **More confidence for deployments**: With a well-tested application, you can deploy with confidence, knowing that your code is solid.
-- **Less time spent in your web browser or http client**: Doing the same thing over and over manually can be time-consuming. Automated testing saves you a lot of time and effort.
+- **Less time spent in your web browser or HTTP client**: Doing the same thing over and over manually can be time-consuming. Automated testing saves you a lot of time and effort.
 - **Happier customers**: A well-tested application leads to a smoother user experience, which results in happier customers and less churn.
 - **Happier clients**: Clients appreciate a bug-free and well-functioning application, just as in your sales pitch!
 - **Happier employer**: A well-tested, bug-free application will make your employer happy as well. It shows professionalism and attention to detail. It can only be good for your career.

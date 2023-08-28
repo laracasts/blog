@@ -27,7 +27,7 @@ This will create a new Laravel project with Pest installed and ready to be used.
 
 Once the project is created, you can run your tests to make sure everything is working as expected.
 
-Check out the ExampleTest.php file in tests/Feature. It clearly states that it will test for the homepage to return a 200 HTTP status code.
+Check out the _ExampleTest.php_ file in _tests/Feature_. It clearly states that it will test for the homepage to return a 200 HTTP status code.
 
 Run your tests using the following command:
 

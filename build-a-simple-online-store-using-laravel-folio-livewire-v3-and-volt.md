@@ -68,7 +68,7 @@ Then, we finalize the process by publishing Volt's Service Provider:
 php artisan volt:install
 ```
 
-Since we want to leverage Laravel Folio to its fullest, go into VoltServiceProvider and remove the following line:
+Since we want to leverage Laravel Folio to its fullest, go into _app/Providers/VoltServiceProvider.php_ and swap the two items in the array used in the `mount()` method:
 
 ```diff
 namespace App\Providers;
@@ -81,8 +81,8 @@ class VoltServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Volt::mount([
--           resource_path('views/livewire'),
             resource_path('views/pages'),
+            resource_path('views/livewire'),
         ]);
     }
 }

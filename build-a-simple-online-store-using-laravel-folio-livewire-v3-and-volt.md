@@ -222,7 +222,7 @@ Our next step is to create an "item" component. It represents individual product
 php artisan make:livewire Item
 ```
 
-Once the command executes, navigate to _resources/views/livewire/item.blade.php_ and add this code:
+Once the command executes, remove the file created in *app/Livewire/Item.php* and navigate to _resources/views/livewire/item.blade.php_. Then, add this code:
 
 ```blade
 <?php
@@ -265,7 +265,7 @@ $add = function () {
 
 In this component:
 1. We have a "Add to Cart" button that calls the `add()` method when clicked.
-2. Then, a state variable named `$done` is set to `true` to disable the button and display a "Added" message instead.
+2. A state variable named `$done` is set to `true` to disable the button and display a "Added" message instead.
 3. The `add()` function dispatches an event that indicates a product has been added. The component that waits for this event (the cart preview) will increment the value in the cache (that's what we'll do in the next step).
 
 ## Create the cart preview component

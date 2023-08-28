@@ -2,9 +2,9 @@
 
 Coding is fun, but debugging? Not so much. That's why testing is crucial for the success of your project. I will show you how easy it is to start testing your Laravel applications. Let's break the ice once and for all!
 
-## Why You Want to Write Tests for Your Projects
+## Why you want to write tests for your projects
 
-Writing tests for your projects is essential for various reasons:
+Writing tests for your projects is essential for various and very good reasons:
 
 - **Fix basic bugs**: Before they ruin the experience for your users, you can catch and fix basic bugs during the development phase.
 - **More confidence for deployments**: With a well-tested application, you can deploy with confidence, knowing that your code is solid.
@@ -13,7 +13,7 @@ Writing tests for your projects is essential for various reasons:
 - **Happier clients**: Clients appreciate an application free of obvious bugs, just as in your sales pitch!
 - **Happier employer**: A well-tested, well-functioning application will make your employer happy as well. It shows professionalism and attention to detail. It can only be good for your career.
 
-## Create a New Project
+## Create a new project
 
 Creating a new project in Laravel with Pest is as simple as running a single command. Open your terminal and run:
 
@@ -21,7 +21,7 @@ Creating a new project in Laravel with Pest is as simple as running a single com
 laravel new hello-world --pest
 ```
 
-This will create a new Laravel project with Pest pre-installed and ready to be used. `cd` into the newly created folder, make sure you can display Laravel's welcome page in your browser using whichever environment you like, and read to the next section!
+This will create a new Laravel project with Pest installed and ready to be used. `cd` into the newly created folder, make sure you can display Laravel's welcome page in your browser using whichever environment you like, and read to the next section!
 
 ## Make sure Pest can run
 

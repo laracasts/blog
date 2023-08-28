@@ -216,13 +216,13 @@ Makes sense? Now, we can start building the homepage and its components, because
 
 ## Create the item component
 
-Our next step is to create an "item" component. It represents individual products available for purchase in our store.
+Our next step is to create an "item" component. It represents individual products available for purchase in our store. This time, we'll use Livewire instead of Volt to create the component. We want it inside the *resources/views/livewire* folder.
 
 ```bash
-php artisan make:volt Item
+php artisan make:livewire Item
 ```
 
-Once the command executes, navigate to _resources/views/pages/item.blade.php_ and add this code:
+Once the command executes, navigate to _resources/views/livewire/item.blade.php_ and add this code:
 
 ```blade
 <?php
@@ -275,7 +275,7 @@ The cart preview component will be a mini representation of the user's shopping 
 Here's how we can create it:
 
 ```bash
-php artisan make:volt CartPreview
+php artisan make:livewire CartPreview
 ```
 
 Now, edit _resources/views/pages/cart-preview.blade.php_:

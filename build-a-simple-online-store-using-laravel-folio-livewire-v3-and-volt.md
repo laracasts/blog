@@ -39,7 +39,7 @@ Laravel Folio is a new approach to routing. Instead of declaring routes with lin
 Let's start by installing the package:
 
 ```bash
-composer require laravel/folio:^1.0@beta
+composer require laravel/folio
 ```
 
 Once done, we must add the Service Provider (from which you can customize Folio's behavior and add middlewares), and create the *pages* directory that will be used by Folio:
@@ -59,7 +59,7 @@ Volt makes single-file components with Livewire v3 possible, and also adds an op
 When added to a project, it also brings Livewire v3 since it's entirely dependent on it. Let's install it using the following command:
 
 ```bash
-composer require livewire/volt:^1.0@beta
+composer require livewire/volt
 ```
 
 Then, we finalize the process by publishing Volt's Service Provider:

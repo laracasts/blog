@@ -39,7 +39,7 @@ Everything should be green. And if your environment was properly working, I bet 
 
 Now, any moment something breaks during the process of rendering the home page, the test will fail. Try to change some code incorrectly, run `php artisan test` again, and you will see it for yourself.
 
-## Create a new test
+## Create a new test for a contact form
 
 ## The case of untested existing projects
 

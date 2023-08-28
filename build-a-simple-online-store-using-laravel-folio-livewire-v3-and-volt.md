@@ -68,7 +68,27 @@ Then, we finalize the process by publishing Volt's Service Provider:
 php artisan volt:install
 ```
 
-Let's not worry about what's inside for now. We won't need to change anything for this project.
+Since we want to leverage Laravel Folio to its fullest, go into VoltServiceProvider and remove the following line:
+
+```php
+namespace App\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Livewire\Volt\Volt;
+
+class VoltServiceProvider extends ServiceProvider
+{
+    public function boot(): void
+    {
+        Volt::mount([
+-           resource_path('views/livewire'),
+            resource_path('views/pages'),
+        ]);
+    }
+}
+```
+
+This way, Volt will understand that we want to create new components in the page folder instead.
 
 ## Make sure that Laravel Folio is operational
 

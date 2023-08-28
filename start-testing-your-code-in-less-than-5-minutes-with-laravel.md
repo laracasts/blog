@@ -42,3 +42,7 @@ Now, any moment something breaks during the process of rendering the home page, 
 ## Create a new test
 
 ## The case of untested existing projects
+
+Existing and successful projects are usually big, and I stumbled upon many of them during my freelance career. Usually, things are so bad that even a basic test that checks for the 200 HTTP code may not work. But you can try anyway! Baby steps and sustained efforts can change things for the better.
+
+And if Laravel's feature tests are too time consuming to write, you might want to take a look at [Laravel Dusk](https://laravel.com/docs/dusk), which uses a headless Google Chrome to help you test your application works, from the perspective of your users, and without any regard for the backend code.

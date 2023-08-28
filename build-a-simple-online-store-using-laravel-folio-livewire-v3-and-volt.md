@@ -82,6 +82,11 @@ Then, go into the freshly created *resources/views/pages* folder. Inside is a .g
 
 Finally, visit http://127.0.0.1:8000 (make sure `php artisan serve` is still running). If you see a page showing _"Hello, world!"_, it means Folio is ready to be used. You can also run the command `php artisan folio:list` and see that your homepage has been registered.
 
+```bash
+GET       / ........................................ index.blade.php
+                                                                                                                                                 Showing [1] routes
+```
+
 ## Create the layout
 
 For the sake of simplicity, we'll use a very basic layout. The code you see below is valid HTML that browsers can render. The [Tailwind CSS Play CDN](https://tailwindcss.com/docs/installation/play-cdn) will enable us to skip all the boring compilation process of a normal project. As you may imagine, it's not recommended to do this is production.

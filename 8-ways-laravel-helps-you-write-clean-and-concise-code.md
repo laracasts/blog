@@ -111,7 +111,7 @@ class PostController extends Controller
 }
 ```
 
-But how does it work? Again, it's not magic. Using [PHP's reflection capabilities](https://www.php.net/manual/en/book.reflection.php) under the hood, Laravel automatically injects an instance of whatever you typehinted in your `store()` method.
+But how does it work? Again, it's not magic. Using [PHP's reflection capabilities](https://www.php.net/manual/en/book.reflection.php) under the hood, Laravel automatically injects an instance of whatever you typehinted in your `store()` method (not just `Illuminate\Http\Request`).
 
 If you really want to, you can even make it happen in the constructor:
 
@@ -129,7 +129,9 @@ class PostController extends Controller
 
     public function store()
     {
-        // $this->request;
+        $this->request->validate(…);
+
+        //
     }
 }
 ```
@@ -174,7 +176,7 @@ The */about* path will now serve the view located in _resources/views/pages/abou
 
 ## Collections
 
-[Collections](https://laravel.com/docs/collections) in Laravel are essentially a wrapper around arrays, providing a whole bunch of really useful methods for manipulating them.
+[Collections](https://laravel.com/docs/collections) in Laravel are essentially a wrapper around arrays, providing a whole bunch of really useful methods for manipulating them, and a more consistent experience compared to native PHP functions.
 
 Want to loop through an array? Wrap it in a collection and use a more modern object-oriented syntax to do so:
 
@@ -216,7 +218,35 @@ trait Conditionable
 }
 ```
 
-It's used accross may classes in the framework such as `Factory`, `Filesystem`, `Logger`, `PendingRequest`, `Carbon`, and many others.
+It's used accross may classes in the framework such as `Builder`, `Factory`, `Filesystem`, `Logger`, `PendingRequest`, `Carbon`, and many others to offers a way to conditionally apply logic using a fluent API instead of if statements.
+
+One common use case is to use it with Eloquent's query builder. Instead of doing this:
+
+```php
+$query = Model::query();
+
+if ($something) {
+    $query->where('something', true);
+} else {
+    $query->where('something_else', true);
+}
+
+$models = $query->get();
+```
+
+You could write more fluent and clean looking code:
+
+```php
+$models = Model::query()
+    ->when(
+        $something,
+        fn ($query) => $query->where('something', true),
+        fn ($query) => $query->where('something_else', true),
+    )
+    ->get();
+```
+
+I like this a lot. What about you?
 
 ## Numerous First-Party Packages
 
@@ -227,3 +257,7 @@ These packages take care of common tasks, saving developers the nightmare of doi
 By leveraging the available packages, developers can defer responsibilities onto others who might have more experience, and who regularly work on the packages. This not only saves time and effort but also ensures that the codebase remains clean and concise.
 
 And after all, why reinvent the wheel when there are experts who have already built and refined the components you need?
+
+## Conclusion
+
+No matter how your code style, the only things that matter are results, and having fun. Experiment with the `Conditionable` trait and see how it goes!

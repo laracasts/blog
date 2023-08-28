@@ -120,10 +120,12 @@ Create a file in _resources/views/components/layouts/app.blade.php_ and paste th
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            container: {
-                center: true,
-                padding: '1rem',
-            },
+            theme: {
+                container: {
+                    center: true,
+                    padding: '1rem',
+                },
+            }
         }
     </script>
 

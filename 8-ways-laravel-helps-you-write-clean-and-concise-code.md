@@ -222,8 +222,8 @@ It's used accross may classes in the framework such as `Factory`, `Filesystem`, 
 
 One of the greatest strengths of Laravel we still haven't talked about is its vast collection of [first](https://laravel.com/docs) and [third-party packages](https://packagist.org).
 
-These packages take care of common tasks, saving developers the nightmare of doing all the work from scratch.
+These packages take care of common tasks, saving developers the nightmare of doing all the work from scratch. Imagine billing, authentication, debugging, feature flags, and so much more, just a `composer require` away.
 
-By leveraging them, developers can defer responsibilities onto others who might have more experience, and who regularly work on the packages. This not only saves time and effort but also ensures that the codebase remains clean and concise.
+By leveraging the available packages, developers can defer responsibilities onto others who might have more experience, and who regularly work on the packages. This not only saves time and effort but also ensures that the codebase remains clean and concise.
 
 And after all, why reinvent the wheel when there are experts who have already built and refined the components you need?

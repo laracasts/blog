@@ -74,7 +74,13 @@ Let's not worry about what's inside for now. We won't need to change anything fo
 
 To create your first page, I suggest you remove *resources/views/welcome.blade.php* as well as the route declaration in *routes/web.php*. Thanks to Laravel Folio, we won't need that anymore.
 
-Finally, visit http://127.0.0.1:8000 (make sure `php artisan serve` is still running). If you see a blank page, it means Folio is ready to be used. You can also run the command `php artisan folio:list` to see if the homepage has been registered.
+Then, go into the freshly created *resources/views/pages* folder. Inside is a .gitkeep that you can remove. Create an index.blade.php and put whatever text you want inside:
+
+```blade
+<h1>Hello, world!</h1>
+```
+
+Finally, visit http://127.0.0.1:8000 (make sure `php artisan serve` is still running). If you see a page showing _"Hello, world!"_, it means Folio is ready to be used. You can also run the command `php artisan folio:list` and see that your homepage has been registered.
 
 ## Create the layout
 

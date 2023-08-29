@@ -113,8 +113,11 @@ class SendContactEmailController extends Controller
             'message' => 'required|string',
         ]);
 
-        Mail::to(config('mail.from.address'))
-            ->send(new ContactMail($validated));
+        Mail::to($validated['email'])
+            ->send(new ContactMail(
+                $validated['name'],
+                $validated['message'],
+            ));
 
         return back()->with('status', 'Your email has been sent!');
     }

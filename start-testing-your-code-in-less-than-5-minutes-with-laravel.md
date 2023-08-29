@@ -99,9 +99,9 @@ class SendContactEmailController extends Controller
     public function __invoke(Request $request)
     {
         $validated = $request->validate([
-            'email' => 'required|email|max:255',
-            'name' => 'required|string|min:3|max:255',
-            'message' => 'required|min:3',
+            'email' => 'required|email',
+            'name' => 'required|string',
+            'message' => 'required|string',
         ]);
 
         Mail::to(config('mail.from.address'))

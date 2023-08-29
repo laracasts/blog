@@ -149,9 +149,9 @@ test('the contact email requires a valid name', function () {
 ## Be pragmatic when writing tests
 
 My strategy when writing tests has been the same for years:
-1. Write for all the happy paths. An example of happy path would be "the contact email can be sent."
+1. Write for all the happy paths. An example of a happy path would be "the contact email can be sent."
 2. Write for the obvious unhappy paths like "the contact email requires a name."
-3. Don't put too much effort into writing tests if your app don't have users. It's extremely difficult to anticipate what could go wrong and your time and energy could be invest elsewhere. Write tests for the bugs your users will actually encounter. Because let's face it, no software is flawless.
+3. Don't put too much effort into writing tests if your app doesn't have users. It's extremely difficult to anticipate what could go wrong and your time and energy could be invested elsewhere. Write tests for the bugs your users will actually encounter. Because let's face it, no software is flawless.
 
 ## The case of untested existing projects
 

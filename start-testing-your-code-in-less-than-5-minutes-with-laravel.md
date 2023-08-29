@@ -41,8 +41,98 @@ Now, any moment something breaks during the process of rendering the home page, 
 
 ## Create a new test for a contact form
 
+```php
+Route::view('/contact', 'contact');
+Route::post('/contact', SendContactEmailController::class);
+```
+
+```blade
+<form method="POST" action="/contact">
+    @csrf
+
+    <div>
+        <label for="name">Name</label>
+        <input type="name" id="name" name="name" value="{{ old('name') }}" />
+    </div>
+
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="{{ old('name') }}" />
+    </div>
+
+    <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message">{{ old('message') }}</textarea>
+    </div>
+
+    <button>
+        Send
+    </button>
+</form>
+```
+
+```php
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class SendContactEmailController extends Controller
+{
+    public function __invoke(Request $request)
+    {
+        $validated = $request->validate([
+            'email' => 'required|email|max:255',
+            'name' => 'required|string|min:3|max:255',
+            'message' => 'required|min:3',
+        ]);
+
+        // Send email.
+
+        return back()->with('status', 'Your email has been sent!');
+    }
+}
+```
+
+```php
+<?php
+
+use App\Mail\Contact;
+
+test('the contact page works', function () {
+    get('/contact')
+        ->assertOk();
+});
+
+test('the contact email can be sent', function () {
+    Mail::fake();
+
+    post('/contact', [
+        'name' => fake()->name(),
+        'email' => fake()->safeEmail(),
+        'message' => fake()->paragraph(),
+    ])
+        ->assertRedirect();
+
+    Mail::assertSent(Contact::class);
+});
+
+test('the contact email requires a name', function () {
+    post('/contact', [
+        'email' => fake()->safeEmail(),
+        'message' => fake()->paragraph(),
+    ])
+        ->assertInvalid(['name' => 'required']);
+});
+
+test('the contact email requires a valid name', function () {
+    …
+});
+
+…
+```
+
 ## The case of untested existing projects
 
 Existing and successful projects are usually big, and I stumbled upon many of them during my freelance career. Usually, things are so bad that even a basic test that checks for the 200 HTTP code may not work. But you can try anyway! Baby steps and sustained efforts can change things for the better.
 
-And if Laravel's feature tests are too time consuming to write, you might want to take a look at [Laravel Dusk](https://laravel.com/docs/dusk), which uses a headless Google Chrome to help you test if your application works, from the perspective of your users and without any regard for the backend code.
+And if Laravel's feature tests are too time-consuming to write, you might want to take a look at [Laravel Dusk](https://laravel.com/docs/dusk), which uses a headless Google Chrome to help you test if your application works, from the perspective of your users and without any regard for the backend code.

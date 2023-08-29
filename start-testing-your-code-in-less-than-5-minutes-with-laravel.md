@@ -146,7 +146,7 @@ test('the contact email requires a valid name', function () {
 …
 ```
 
-## Don't try to think about all cases; be pragmatic.
+## Be pragmatic when writing tests
 
 My strategy when writing tests has been the same for years:
 1. Write for all the happy paths. An example of happy path would be "the contact email can be sent."

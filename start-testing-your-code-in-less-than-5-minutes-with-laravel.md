@@ -41,11 +41,17 @@ Now, any moment something breaks during the process of rendering the home page, 
 
 ## Create a tested contact form
 
-### The routes
+### Create the routes
 
 ```php
 Route::view('/contact', 'contact');
 Route::post('/contact', SendContactEmailController::class);
+```
+
+### Create the controller
+
+```bash
+php artisan make:controller SendContactEmailController --invokable
 ```
 
 ### Create the Mailable
@@ -54,7 +60,7 @@ Route::post('/contact', SendContactEmailController::class);
 php artisan make:mail ContactMail
 ```
 
-### The form
+### Create the form
 
 ```blade
 <form method="POST" action="/contact">
@@ -81,7 +87,7 @@ php artisan make:mail ContactMail
 </form>
 ```
 
-### The controller
+### Send the email
 
 ```php
 namespace App\Http\Controllers;
@@ -106,7 +112,7 @@ class SendContactEmailController extends Controller
 }
 ```
 
-### The tests
+### Create the tests
 
 ```php
 <?php

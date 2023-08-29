@@ -2,7 +2,7 @@
 
 Coding is fun, but debugging? Not so much. That's why testing is crucial for the success of your project. I will show you how easy it is to start testing your Laravel applications. Let's break the ice once and for all!
 
-## Why you want to write tests for your projects
+## Here's why you want to write tests for your projects
 
 Writing tests for your projects is essential for various and very good reasons:
 
@@ -46,6 +46,12 @@ Now, any moment something breaks during the process of rendering the home page, 
 ```php
 Route::view('/contact', 'contact');
 Route::post('/contact', SendContactEmailController::class);
+```
+
+### Create the Mailable
+
+```bash
+php artisan make:mail ContactMail
 ```
 
 ### The form
@@ -92,7 +98,8 @@ class SendContactEmailController extends Controller
             'message' => 'required|min:3',
         ]);
 
-        // Send email.
+        Mail::to(config('mail.from.address'))
+            ->send(new ContactMail($validated));
 
         return back()->with('status', 'Your email has been sent!');
     }
@@ -104,7 +111,7 @@ class SendContactEmailController extends Controller
 ```php
 <?php
 
-use App\Mail\Contact;
+use App\Mail\ContactMail;
 
 test('the contact page works', function () {
     get('/contact')
@@ -121,7 +128,7 @@ test('the contact email can be sent', function () {
     ])
         ->assertRedirect();
 
-    Mail::assertSent(Contact::class);
+    Mail::assertSent(ContactMail::class);
 });
 
 test('the contact email requires a name', function () {

@@ -39,12 +39,16 @@ Everything should be green. And if your environment was properly working, I bet 
 
 Now, any moment something breaks during the process of rendering the home page, the test will fail. Try to change some code incorrectly, run `php artisan test` again, and you will see it for yourself.
 
-## Create a new test for a contact form
+## Create a tested contact form
+
+### The routes
 
 ```php
 Route::view('/contact', 'contact');
 Route::post('/contact', SendContactEmailController::class);
 ```
+
+### The form
 
 ```blade
 <form method="POST" action="/contact">
@@ -71,6 +75,8 @@ Route::post('/contact', SendContactEmailController::class);
 </form>
 ```
 
+### The controller
+
 ```php
 namespace App\Http\Controllers;
 
@@ -92,6 +98,8 @@ class SendContactEmailController extends Controller
     }
 }
 ```
+
+### The tests
 
 ```php
 <?php

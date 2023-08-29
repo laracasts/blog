@@ -260,4 +260,4 @@ And after all, why reinvent the wheel when there are experts who have already bu
 
 ## Conclusion
 
-No matter how your code style, the only things that matter are results, and having fun. Experiment with the `Conditionable` trait and see how it goes!
+No matter how your coding style, the only things that matter are results and having fun. Experiment with the `Conditionable` trait and see how it goes!

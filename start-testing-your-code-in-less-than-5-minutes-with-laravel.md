@@ -151,10 +151,10 @@ test('the contact email requires a valid name', function () {
 My strategy when writing tests has been the same for years:
 1. Write for all the happy paths. An example of a happy path would be "the contact email can be sent."
 2. Write for the obvious unhappy paths like "the contact email requires a name."
-3. Don't put too much effort into writing tests if your app doesn't have users. It's extremely difficult to anticipate what could go wrong and your time and energy could be invested elsewhere. Write tests for the bugs your users will actually encounter. Because let's face it, no software is flawless.
+3. That's it. Don't put too much effort into writing tests if your app doesn't have users yet. It's difficult to anticipate what could go wrong and your time and energy could be invested better elsewhere. Write tests for the bugs your users will actually encounter. Because let's face it, no software is flawless.
 
 ## The case of untested existing projects
 
 Existing and successful projects are usually big, and I stumbled upon many of them during my freelance career. Usually, things are so bad that even a basic test that checks for the 200 HTTP code may not work. But you can try anyway! Baby steps and sustained efforts can change things for the better.
 
-And if Laravel's feature tests are too time-consuming to write, you might want to take a look at [Laravel Dusk](https://laravel.com/docs/dusk), which uses a headless Google Chrome to help you test if your application works, from the perspective of your users and without any regard for the backend code.
+And if Laravel's feature tests are too time-consuming to write because of what I just said, you might want to take a look at [Laravel Dusk](https://laravel.com/docs/dusk). It uses a headless Google Chrome to help you test if your application works, from the perspective of your users and without any regard for the backend code.

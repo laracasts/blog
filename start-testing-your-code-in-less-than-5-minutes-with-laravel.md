@@ -57,10 +57,27 @@ Route::view('/contact', 'contact');
 Route::post('/contact', SendContactEmailController::class);
 ```
 
-### Create the Mailable
+### Create and set up the Mailable
 
 ```bash
 php artisan make:mail ContactMail
+```
+
+```php
+namespace App\Mail;
+
+…
+
+class ContactMail extends Mailable
+{
+    use Queueable, SerializesModels;
+
+    public function __construct(
+        protected string $name,
+        protected string $message
+    ) {
+    }
+}
 ```
 
 ### Create the form

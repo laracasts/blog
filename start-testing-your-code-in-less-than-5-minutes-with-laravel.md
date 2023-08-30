@@ -21,7 +21,9 @@ Creating a new project in Laravel with Pest is as simple as running a single com
 laravel new hello-world --pest
 ```
 
-This will create a new Laravel project with Pest installed and ready to be used. `cd` into the newly created folder, make sure you can display Laravel's welcome page in your browser using whichever environment you like, and read to the next section!
+This will create a new Laravel project with Pest installed and ready to be used. Pest is based on PHPUnit, but focuses on simplicity. Using it will make it easier for newcomers to write tests.
+
+`cd` into the newly created folder, make sure you can display Laravel's welcome page in your browser using whichever environment you like, and read to the next section!
 
 ## Make sure Pest can run
 

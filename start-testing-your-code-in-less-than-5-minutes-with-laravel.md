@@ -102,7 +102,7 @@ class ContactMail extends Mailable
 
 ### Create the form
 
-We're almost there. We now need to build the form to allow people to contact you. Nothing fancy there, just some fields (name, email, and message) and the @csrf directive to protect us against Cross-Site Request Forgery.
+We're almost there. We now need to build the form to allow people to contact you. Nothing fancy there, just some fields (name, email, and message), a way to display individual errors if there are some, and the @csrf directive to protect us against Cross-Site Request Forgery.
 
 Artisan doesn't have a command to create views, so I made you one that you can just copy and paste.
 
@@ -113,22 +113,29 @@ touch resources/views/contact.blade.php
 Then, in _resources/views/contact.blade.php_, paste the form:
 
 ```blade
+@if (session('status'))
+    <p>{{ session('status') }}</p>
+@endif
+
 <form method="POST" action="/contact">
     @csrf
 
     <div>
         <label for="name">Name</label>
         <input type="name" id="name" name="name" value="{{ old('name') }}" />
+        @error('name') <p>{{ $message }}</p> @enderror
     </div>
 
     <div>
         <label for="email">Email</label>
         <input type="email" id="email" name="email" value="{{ old('name') }}" />
+        @error('email') <p>{{ $message }}</p> @enderror
     </div>
 
     <div>
         <label for="message">Message</label>
         <textarea id="message" name="message">{{ old('message') }}</textarea>
+        @error('message') <p>{{ $message }}</p> @enderror
     </div>
 
     <button>Send</button>
@@ -138,6 +145,12 @@ Then, in _resources/views/contact.blade.php_, paste the form:
 We are now just missing some code in the controller.
 
 ### Send the email
+
+In the controller, we will write extremely simple code.
+
+1. We validate the user's input because we should never trust it.
+2. We send the email using the Mail Facade and a new instance of ContactMail, our mailable.
+3. Then, we redirect the user back with a status message (we are displaying it above the form).
 
 ```php
 namespace App\Http\Controllers;

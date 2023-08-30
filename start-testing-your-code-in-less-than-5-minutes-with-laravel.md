@@ -102,9 +102,15 @@ class ContactMail extends Mailable
 
 ### Create the form
 
+We're almost there. We now need to build the form to allow people to contact you. Nothing fancy there, just some fields (name, email, and message) and the @csrf directive to protect us against Cross-Site Request Forgery.
+
+Artisan doesn't have a command to create views, so I made you one that you can just copy and paste.
+
 ```bash
 touch resources/views/contact.blade.php
 ```
+
+Then, in _resources/views/contact.blade.php_, paste the form:
 
 ```blade
 <form method="POST" action="/contact">
@@ -125,11 +131,11 @@ touch resources/views/contact.blade.php
         <textarea id="message" name="message">{{ old('message') }}</textarea>
     </div>
 
-    <button>
-        Send
-    </button>
+    <button>Send</button>
 </form>
 ```
+
+We are now just missing some code in the controller.
 
 ### Send the email
 

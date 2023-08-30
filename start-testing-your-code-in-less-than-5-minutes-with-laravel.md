@@ -41,13 +41,19 @@ Now, any moment something breaks during the process of rendering the home page, 
 
 ## Create a tested contact form
 
+Practice makes perfect. Let's see how we can write more advanced tests now that we saw how easy it is.
+
 ### Create the controller
+
+To get started with our contact form, let's create a single-action controller by using the `--invokable` flag: 
 
 ```bash
 php artisan make:controller SendContactEmailController --invokable
 ```
 
 ### Create the routes
+
+Then, we must declare two routes: one that displays the form, and the other that processes the user's input and sends the message:
 
 ```php
 use Illuminate\Support\Facades\Route;
@@ -67,15 +73,25 @@ php artisan make:mail ContactMail
 namespace App\Mail;
 
 …
+use Illuminate\Mail\Mailables\Address;
 
 class ContactMail extends Mailable
 {
     use Queueable, SerializesModels;
 
     public function __construct(
+        protected string $from,
         protected string $name,
         protected string $message
     ) {
+    }
+
+    public function envelope(): Envelope
+    {
+        return new Envelope(
+            from: new Address($this->from, $this->name),
+            subject: 'Contact request',
+        );
     }
 }
 ```

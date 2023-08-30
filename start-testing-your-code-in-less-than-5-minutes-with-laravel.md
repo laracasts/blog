@@ -53,7 +53,7 @@ php artisan make:controller SendContactEmailController --invokable
 
 ### Create the routes
 
-Then, we must declare two routes: one that displays the form, and the other that processes the user's input and sends the message:
+Then, we must declare two routes: one that answers _GET_ requests on the _/contact_ path and displays the form, and the other using _POST_ that processes the user's input and sends the message:
 
 ```php
 use Illuminate\Support\Facades\Route;
@@ -65,9 +65,13 @@ Route::post('/contact', SendContactEmailController::class);
 
 ### Create and set up the Mailable
 
+Creating a mailable is as easy as creating a controller using the following command:
+
 ```bash
 php artisan make:mail ContactMail
 ```
+
+Then, let's modify it a bit with three properties. For that, we'll use constructor property promotion, which makes us write less code. Then, We need to build a new Envelope object and pass relevant information about the sender.
 
 ```php
 namespace App\Mail;
@@ -90,7 +94,7 @@ class ContactMail extends Mailable
     {
         return new Envelope(
             from: new Address($this->from, $this->name),
-            subject: 'Contact request',
+            subject: 'Contact Mail',
         );
     }
 }

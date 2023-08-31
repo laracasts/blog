@@ -184,13 +184,15 @@ class SendContactEmailController extends Controller
 
 ### Create the tests
 
+Creating new tests in Laravel is as easy as using the following command. Don't forget the `--pest` option.
+
 ```bash
 php artisan make:test SendContactEmailTest --pest
 ```
 
-```php
-<?php
+Then, we can finally start writing tests making sure the form is displayed without errors, another test for the happy path of sending the email, and other tests for making sure our validation rules work.
 
+```php
 use App\Mail\ContactMail;
 use Illuminate\Support\Facades\Mail;
 use function Pest\Laravel\{get,post};
@@ -208,7 +210,7 @@ test('the contact email can be sent', function () {
         'email' => fake()->safeEmail(),
         'message' => fake()->paragraph(),
     ])
-        ->assertRedirect();
+        ->assertRedirect('/contact');
 
     Mail::assertSent(ContactMail::class);
 });
@@ -227,6 +229,18 @@ test('the contact email requires a valid name', function () {
 
 …
 ```
+
+1. "Test the contact page works":
+    - We write our first test to check if the contact page is accessible. This test makes a _GET_ request to the _"/contact"_ route and asserts that the response status is OK (200).
+2. "Test the contact email can be sent":
+    - The next test is to ensure that the contact email can be sent. We first fake the Mail facade to prevent actual emails from being sent and to assert that an email was sent.
+    - We then make a _POST_ request to the _"/contact"_ route with a randomly generated fake name, email, and message.
+    - We assert that the request is redirected back.
+    - Finally, we assert that the mailable `ContactMail` was sent.
+3. "Test the contact email requires a name":
+    - The final test ensures that the "name" field is required to send a contact email.
+    - We make a POST request to the _"/contact"_ route with only a fake email and message (no name).
+    - We then assert that the response is invalid and that the "name" field is required.
 
 ## Be pragmatic when writing tests
 

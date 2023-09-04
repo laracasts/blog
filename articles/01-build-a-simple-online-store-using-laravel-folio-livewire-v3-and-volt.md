@@ -1,4 +1,7 @@
-# Build a simple online store using Laravel Folio, Livewire v3, and Volt
+---
+title: Build a simple online store using Laravel Folio
+description: What makes the Laravel ecosystem magical is that there are always new things to learn and experiment with. Some of the latest additions to it are Laravel Folio and Volt.
+---
 
 What makes the Laravel ecosystem magical is that there are always new things to learn and experiment with. Some of the latest additions to it are Laravel Folio and Volt.
 

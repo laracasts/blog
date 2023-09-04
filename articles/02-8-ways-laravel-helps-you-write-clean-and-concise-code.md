@@ -1,4 +1,7 @@
-# 8 ways Laravel helps you write clean and concise code
+---
+title: 8 ways Laravel helps you write clean and concise code.
+description: The definition of clean code is subjective. It's often a source of heated debates between developers on the web. For this article, we will focus on features in Laravel that enable us to write less of it.
+---
 
 The definition of clean code is subjective. It's often a source of heated debates between developers on the web. For this article, we will focus on features in Laravel that enable us to write less of it.
 

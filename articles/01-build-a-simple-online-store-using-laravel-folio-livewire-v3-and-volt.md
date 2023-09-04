@@ -5,13 +5,15 @@ description: What makes the Laravel ecosystem magical is that there are always n
 
 What makes the Laravel ecosystem magical is that there are always new things to learn and experiment with. Some of the latest additions to it are Laravel Folio and Volt.
 
-**[Laravel Folio](https://github.com/laravel/folio) offers a file-based approach to defining routes.**
-
-**And [Volt](https://laravel.com/docs/volt) introduces single-file components and an optional new composition API to [Livewire v3](https://livewire.laravel.com).**
+{info}
+[Laravel Folio](https://github.com/laravel/folio) offers a file-based approach to defining routes. And [Volt](https://laravel.com/docs/volt) introduces single-file components and an optional new composition API to [Livewire v3](https://livewire.laravel.com).
+{/info}
 
 Embracing these new tools and principles can enhance your productivity and transform how you build web applications with Laravel. Let me show you by building a simple online store.
 
+{tip}
 Before you start, check out [the live demo](https://dummy-store.benjamincrozat.com).
+{/tip}
 
 ## Create your new Dummy Store project
 

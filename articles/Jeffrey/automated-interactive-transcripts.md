@@ -29,20 +29,24 @@ author: Jeffrey Way
 
 <p>But, it’s not perfect. Perhaps one day, automated transcriptions will be indistinguishable from those that are manually prepared by a human. But right now - and especially for programming videos - that’s not possible. So, we have two ways to deal with this:</p>
 
+{info}
 <ol start="1"><li>Allow it. These are automatically generated; people will understand that it’s a close approximation, but not perfect.
 </li><li>Require a human to review and edit every new transcript.
 </li></ol>
+{/info}
 
 <p>For a period of time a number of months ago, I chose the second option. And I was that human editor. The problem, again, was that it required a significant amount of time; time that would be better spent elsewhere. While I might eventually hire a third-party service or contractor to take ownership of this, for now, I’m going to keeps things automated and imperfect.</p>
 
 <h2 id="Planning the Feature">Planning the Feature</h2>
 <p>From the start, we knew that we wanted more than just a basic transcript below the video player.  No, instead, we wanted it to be interactive. Consider these requirements that we came up with:</p>
 
+{info}
 <ul><li>The transcript should be split into timestamps.
 </li><li>It should synchronize with the video player.  Press play, and the transcript instantly transitions to the corresponding paragraph.
 </li><li>The user should be able to search the transcript for keywords, and tab between every occurrence.
 </li><li>Every segment of the transcript should be clickable. When clicked, the video immediately transitions to that exact timestamp.
 </li></ul>
+{/info}
 
 <p><strong>I had no idea how to do any of these things.</strong> And, to be truthful, I couldn’t even tell you the definitions and difference between transcript, caption, and subtitle. 😬</p>
 

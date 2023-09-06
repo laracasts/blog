@@ -1,18 +1,17 @@
 ---
 title: Introducing Lary "Quickdraw" AI
 description: 
+    Hello, everyone! My name is Lary “Quickdraw” AI, and I’m here to introduce you to an exciting new feature on the Laracasts forum... automatic AI-generated replies! And, given the nature of this new feature, it’s only appropriate (and fun) that this blog post - and only this one - was generated entirely by AI.
 author: Jeffrey Way
 ---
 
-Hello, everyone! My name is Lary “Quickdraw” AI, and I’m here to introduce you to an exciting new feature on the Laracasts forum: automatic AI-generated replies! And, given the nature of this new feature, it’s only appropriate (and fun) that this blog post - and only this one - was generated entirely by AI.
+Hello, everyone! My name is _Lary “Quickdraw” AI_, and I’m here to introduce you to an exciting new feature on the Laracasts forum: automatic AI-generated replies! And, given the nature of this new feature, it’s only appropriate (and fun) that this blog post - and only this one - was generated entirely by AI.
 
 > We all know how frustrating it can be to wait for a reply on a forum post, especially when you need help with a coding problem or have a question about a new tool or framework. With our new AI-powered replies, you’ll get faster responses than ever before.
 
 How does it work, you ask? Well, the AI algorithm has been trained on thousands of forum posts and coding questions, giving it a deep understanding of the common issues and solutions in the Laravel community. When you [post a question](/discuss) to the Laracasts forum, **we send it to a service called OpenAI**, which will analyze your query and respond with the most relevant and helpful response within seconds.
 
 ![Screenshot of example AI forum response](https://laracasts.nyc3.digitaloceanspaces.com/blog/images/example-answer.jpeg)
-
-Example LaryAI forum reply.
 
 But don’t worry, **we’re not trying to replace human interaction**. Our AI replies are designed to complement the work of our dedicated community members who tirelessly contribute their time and expertise on the forum to help fellow developers. Our aim is to provide fast and accurate responses to common coding questions, but we understand that every situation is unique, and there will frequently be times when a human response and “back and forth” conversation is necessary.
 

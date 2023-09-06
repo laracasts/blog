@@ -8,7 +8,9 @@ I’ve kept a somewhat scatter-brained version of the following text as a Laraca
 
 I’ve of course extended that Trello card with plenty of fluff, and no less than three pop culture references for your reading pleasure. So, if you’re ready, let’s make like [Leeroy Jenkins](https://www.youtube.com/watch?v=mLyOj_QD4a4) and do this.
 
-[\- Jump to all recommended screencasting purchases.](#all-recommended)
+{panel}
+[\- Jump to all recommended screencasting purchases.](#all-recommended-products)
+{/panel}
 
 What Went Wrong?
 ----------------
@@ -21,7 +23,9 @@ Okay, look, if you want to crank out a screencast as quickly and cheaply as poss
 
 Things have changed. In 2006, due to sheer lack of supply, I would often begrudgingly watch blurry 480p technical screencasts with audio that sounded as if the speaker was trapped alongside Dorothy in her tornado-fueled spinning home. Noise, wind, and what appeared to be laughing witches in the background.
 
+{info}
 But that was 2006. To put things into perspective, at that time, Netflix streaming wasn’t yet a thing - and wouldn’t be for another two years. Hulu wasn’t a thing. Amazon Prime wasn’t a thing. Youtube existed, yes, but was still in its infancy and mostly consisted of cat clips and “my day at the zoo” videos, recorded on two-megapixel cameras.
+{/info}
 
 Supply and demand is the key here. Ask me how many times I’ve endured a noisy, low-resolution screencast in the last five years. The answer is, of course, zero times. In the year 2022, the supply is through the roof. Everyone has a hot new course or six-hour A-Z training video on YouTube. It is no longer acceptable or appropriate to publish a lazy, low-quality screencast and expect anything more than, well, two views.
 
@@ -36,25 +40,25 @@ I get it. Your AirPods include a built-in microphone, and you sometimes use it f
 
 You generally have two categories to choose from: USB-powered and XLR.
 
-### USB Microphones
+### 1. USB Microphones
 
 A USB microphone provides the simplest, plug-and-play entry. They often even include a built-in stand for your desk. You’ll find a wide array of options in this category. You might consider the following options:
 
-*   [Rode NT-USB](https://amzn.to/3Ayw7OF)
-*   [Blue Yeti X](https://amzn.to/3TnIIg6)
+*   **[Rode NT-USB](https://amzn.to/3Ayw7OF)**
+*   **[Blue Yeti X](https://amzn.to/3TnIIg6)**
 
 Either of these will offer a significant leap over using your computer's built-in microphone. And...yeah! This might be enough, depending on your intended audience! I’m a big fan of simplicity. This path fits the bill.
 
-### XLR Microphones
+### 2. XLR Microphones
 
 The second category requires more complexity and a heftier financial investment. But the improved audio quality is not insignificant. The gold standard for podcasting is:
 
-*   [Shure SM7B](https://amzn.to/3pZTITC)
+*   **[Shure SM7B](https://amzn.to/3pZTITC)**
 
 This microphone usually hovers around $399 USD, so it’s not cheap. And, worse, you’re not done taking out your wallet. You may notice, after your first test recording, that the volume output level it produces is surprisingly quiet. To fix this, you’ll likely want to also pick up an external gain booster. Try one of these:
 
-*   [Triton Fethead](https://amzn.to/3AYDCjc)
-*   [Cloudlifter](https://amzn.to/3R6zD9X)
+*   **[Triton Fethead](https://amzn.to/3AYDCjc)**
+*   **[Cloudlifter](https://amzn.to/3R6zD9X)**
 
 Either option will do the trick (I use a Fethead), and are easy to use. Plug your XLR cable into them, and forget about it. You’ll now have an extra 20 decibals of gain to work with. Problem solved.
 
@@ -64,7 +68,7 @@ But, sorry, you’re still not done. You now have your new microphone and Fethea
 
 The solution to this XLR cable problem is to purchase an audio interface. Think of these in the same way you would think of a PHP adapter class. The job of an audio interface is to convert, or adapt, an input source - your XLR mic - into a format that your computer will recognize. I’d recommend picking up:
 
-*   [Focusrite Scarlett 2i2](https://amzn.to/3R323lm)
+*   **[Focusrite Scarlett 2i2](https://amzn.to/3R323lm)**
 
 The Focusrite Scarlett is incredibly popular, and for good reason, too.
 
@@ -76,7 +80,7 @@ Great! Onward to the next problem.
 
 Your old USB-powered microphone probably included its own stand. This new SM7B does not. Now, you could try balancing it on a stack of books on your desk, but let’s not. I’d recommend picking up a swivel boom stand that can be attached to your desk. That way you can push it away when you’re not recording.
 
-*   [Heil Sound PL-2T](https://amzn.to/3wJ4u4c)
+*   **[Heil Sound PL-2T](https://amzn.to/3wJ4u4c)**
 
 ### Audio Setup Complete
 
@@ -87,8 +91,8 @@ Record Your Screen
 
 If you’re a Mac user, Quicktime is a perfectly suitable option for recording your screen. But, of course, at some point, you’ll need to edit your screencast. I’m going to assume that you’re not a master record-in-one-go speaker. Few of us are. Most of my completed videos contain dozens upon dozens of edits and cuts. So it sounds like you’ll require dedicated software to edit out those umms, ahhs, and pauses. Here are some popular options.
 
-*   [ScreenFlow](https://www.telestream.net/screenflow/overview.htm?utm_source=bing&utm_term=screenflow&utm_campaign=Multi-Varient_brand_sf&utm_medium=cpc&utm_content=v1q88y5t_dc%7Cpcrid%7C82807117833237%7Cpkw%7Cscreenflow%7Cpmt%7Cbe)
-*   [Camtasia](https://www.techsmith.com/video-editor.html)
+*   **[ScreenFlow](https://www.telestream.net/screenflow/overview.htm?utm_source=bing&utm_term=screenflow&utm_campaign=Multi-Varient_brand_sf&utm_medium=cpc&utm_content=v1q88y5t_dc%7Cpcrid%7C82807117833237%7Cpkw%7Cscreenflow%7Cpmt%7Cbe)**
+*   **[Camtasia](https://www.techsmith.com/video-editor.html)**
 
 Note that these applications are specifically designed for screencasting. Prepare a new recording - usually 1080p or 1280x720 HiDPI is sufficient for programming content - select your new microphone from the audio input tab, and you’re off to the races!
 
@@ -103,18 +107,19 @@ As you work on this, you, too, will become sensitive to certain mistakes or tick
 
 A high-quality microphone and suitable screen resolution are essential prerequisites. But the real value of your video will depend on one thing: you. How will you present information to the user? Don’t skip over this important step.
 
+{tip}
 *   **University:** The school-like approach, where you speak over a series of slides. I generally discourage this for programming content, but it’s an option.
 *   **Rapid:** Intentionally quick-paced format. How much information can we crank into a 3-minute video? There’s a trade-off here, of course, but it’s an interesting choice.
 *   **Unedited Streams:** Long-form streams, no edits, intended to simulate actual work-flow. This style is popular in the programming world, but I generally avoid it.
 *   **Youtuber:** Includes on-camera work, fast cuts, background music, and a quicker pace. This requires a significant amount of effort and potential scripting, but produces an enjoyable video that is geared for high amounts of traffic.
 *   **A-Z:** In depth training, broken into chapters or sections. Each chapter can be its own video, or merged into a multi-hour compilation video.
-    
+{/tip} 
 
 There’s nothing that says you must choose one - and only one - option from the categories above. But keep in mind that if you intend to regularly produce content, it might prove useful to be consistent with your style. It will ultimately become a key part of your overall branding.
 
 ### 2\. The Light is Green
 
-You have around ten seconds to grab the viewer’s attention. This doesn’t mean you must do something crazy to pique their interest (though that works), but it does signal that you should get going right from the start. Are you sure that you need a logo sting, followed by a painfully-slow transitioning slide that displays the title of your video, followed by another slide with your name and photo, and then finally, for good measure, an extra five seconds of silence before you start speaking, “Hello…”? What if you instead said “Hello” in the first second? Cut the slides and pause. Or, even better, what if you skipped over the greeting entirely and jumped right into the subject matter of the video?
+You have around ten seconds to grab the viewer’s attention. This doesn’t mean you must do something crazy to pique their interest (though that works), but it does signal that you should get going right from the start. **Are you sure that you need a logo sting, followed by a painfully-slow transitioning slide that displays the title of your video**, followed by another slide with your name and photo, and then finally, for good measure, an extra five seconds of silence before you start speaking, “Hello…”? What if you instead said “Hello” in the first second? Cut the slides and pause. Or, even better, what if you skipped over the greeting entirely and jumped right into the subject matter of the video?
 
 Generally, I like to adopt a “don’t tell…show” approach. I promise you: that five-minute slide at the beginning of your video - where you outline what you’ll cover in the screencast - isn’t necessary. Viewers will fast-forward. Particularly for education content for programming, slides are almost always the wrong choice in this author's opinion. Restrict their usage to situations where a diagram or comparison is paramount for the viewer’s understanding. Otherwise, remove them.
 
@@ -169,14 +174,18 @@ I often notice that programming teachers on Youtube will tell you what they’re
 All Recommended Products
 ------------------------
 
-That’s all, folks! Here’s all the products I recommended in this article. _Please note that some of these may include affiliate links, because, hey, why not?_
+That’s all, folks! 
 
-*   [Rode NT USB Microphone](https://amzn.to/3Ayw7OF)
-*   [Blue Yeti X USB Microphone](https://amzn.to/3TnIIg6)
-*   [Shure SM7B XLR Microphone](https://amzn.to/3pZTITC)
-*   [Triton Fethead Gain Booster](https://amzn.to/3AYDCjc)
-*   [Cloudlifter Gain Booster](https://amzn.to/3R6zD9X)
-*   [Focusrite Scarlett 2i2 Audio Interface](https://amzn.to/3R323lm)
-*   [Heil Sound PL-2T Boom Stand](https://amzn.to/3wJ4u4c)
-*   [ScreenFlow Software](https://www.telestream.net/screenflow/overview.htm?utm_source=bing&utm_term=screenflow&utm_campaign=Multi-Varient_brand_sf&utm_medium=cpc&utm_content=v1q88y5t_dc%7Cpcrid%7C82807117833237%7Cpkw%7Cscreenflow%7Cpmt%7Cbe)
-*   [Camtasia Software](https://www.techsmith.com/video-editor.html)
+{info}
+Here’s all the products I recommended in this article. **Please note that some of these may include affiliate links, because, hey, [why not?](https://tenor.com/view/easy-money-terminator-2-jhon-connor-gif-12024074497600583036)**
+
+*   **[Rode NT USB Microphone](https://amzn.to/3Ayw7OF)**
+*   **[Blue Yeti X USB Microphone](https://amzn.to/3TnIIg6)**
+*   **[Shure SM7B XLR Microphone](https://amzn.to/3pZTITC)**
+*   **[Triton Fethead Gain Booster](https://amzn.to/3AYDCjc)**
+*   **[Cloudlifter Gain Booster](https://amzn.to/3R6zD9X)**
+*   **[Focusrite Scarlett 2i2 Audio Interface](https://amzn.to/3R323lm)**
+*   **[Heil Sound PL-2T Boom Stand](https://amzn.to/3wJ4u4c)**
+*   **[ScreenFlow Software](https://www.telestream.net/screenflow/overview.htm?utm_source=bing&utm_term=screenflow&utm_campaign=Multi-Varient_brand_sf&utm_medium=cpc&utm_content=v1q88y5t_dc%7Cpcrid%7C82807117833237%7Cpkw%7Cscreenflow%7Cpmt%7Cbe)**
+*   **[Camtasia Software](https://www.techsmith.com/video-editor.html)**
+{/info}

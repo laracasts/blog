@@ -12,7 +12,7 @@ The point is: things get lost the further you travel from the source. I can teac
 
 With that in mind, today, I’m proud to announce a special new category of series here at Laracasts: **CreatorSeries**.
 
-![Creator Series Logo](https://laracasts.nyc3.digitaloceanspaces.com/blog/images/creator-series-logo.svg)
+![Laracasts CreatorSeries](https://github.com/laracasts/blog/assets/183223/4a7355b7-18e0-4a5f-85a4-64cbf85e8b4c)
 
 > Why learn a tool second-hand, when you can instead be taught by the very person who created it? CreatorSeries provide deep-dives into technologies, as presented by their original creators.
 
@@ -34,6 +34,6 @@ I reached out to Caleb many months ago about the possibility of doing an advance
 
 Caleb agreed. And it’s now [ready to watch in its entirety](https://laracasts.com/series/livewire-uncovered).
 
-[![](https://laracasts.nyc3.digitaloceanspaces.com/blog/images/livewire-uncovered-card.jpeg)](https://laracasts.com/series/livewire-uncovered)
+![Livewire Uncovered](https://laracasts.nyc3.digitaloceanspaces.com/blog/images/livewire-uncovered-card.jpeg)
 
 This is only the first of many CreatorSeries that we currently have in development. We'll discuss other courses in the near future, but until then, sit back, kick up your feet, and [learn how to build Livewire](https://laracasts.com/series/livewire-uncovered).

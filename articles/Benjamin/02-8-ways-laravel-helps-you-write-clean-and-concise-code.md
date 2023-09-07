@@ -98,7 +98,7 @@ Learn more on the official documentation: https://laravel.com/docs/routing#impli
 
 Laravel can magically inject dependencies into your code. OK, let me explain, because this sounds way more complicated than it is.
 
-You surely have delt with a request object in Laravel, right? And I bet you never had to create the instance yourself. Most of the time, you get it via your controller this way:
+You surely have dealt with a request object in Laravel, right? And I bet you never had to create the instance yourself. Most of the time, you get it via your controller this way:
 
 ```php
 <?php
@@ -221,7 +221,7 @@ trait Conditionable
 }
 ```
 
-It's used accross may classes in the framework such as `Builder`, `Factory`, `Filesystem`, `Logger`, `PendingRequest`, `Carbon`, and many others to offers a way to conditionally apply logic using a fluent API instead of if statements.
+It's used across many classes in the framework such as `Builder`, `Factory`, `Filesystem`, `Logger`, `PendingRequest`, `Carbon`, and many others to offers a way to conditionally apply logic using a fluent API instead of if statements.
 
 One common use case is to use it with Eloquent's query builder. Instead of doing this:
 
@@ -263,4 +263,4 @@ And after all, why reinvent the wheel when there are experts who have already bu
 
 ## Conclusion
 
-No matter how your coding style, the only things that matter are results and having fun. Experiment with the `Conditionable` trait and see how it goes!
+No matter how your coding style is, the only things that matter are results and having fun. Experiment with the `Conditionable` trait and see how it goes!

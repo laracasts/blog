@@ -4,7 +4,9 @@ description: I’ve been thinking about writing this blog post for months. It wa
 author: Jeffrey Way
 ---
 
-I’ve been thinking about writing this blog post for months. It was the light at the end of an increasingly long tunnel. “_When this project is finally done,_” I’d tell myself, “_I’ll set aside one Friday afternoon, find a seat at the coffee shop nearest to my home, and write an announcement - to the small portion of the world who cares about such things - that Laracasts is officially an SPA (single page application)_.
+I’ve been thinking about writing this blog post for months. It was the light at the end of an increasingly long tunnel. 
+
+> “When this project is finally done,” I’d tell myself, “I’ll set aside one Friday afternoon, find a seat at the coffee shop nearest to my home, and write an announcement - to the small portion of the world who cares about such things - that Laracasts is officially an SPA (single page application).
 
 To tell you the truth, I never thought I’d write or say that. Like many, I have my own set of frustrations when it comes to SPAs. Despite their obvious and immediate appeal, I’d always return to the same question: “_Is the complexity trade-off worth the effort?_” That question was stuck in a sort of purgatory until earlier this year when I began experimenting with [Inertia.js](http://inertiajs.com).
 
@@ -12,11 +14,11 @@ To tell you the truth, I never thought I’d write or say that. Like many, I hav
 
 There are a few common ways to construct a typical web application these days.
 
-### Option 1: Server-Side
+### 1. Server-Side
 
 The first option is to render and manage everything on the server-side. This is the traditional way that you’ve experienced around the web for years and years. Submit a form, and wait as the page posts to the server, processes the data, and renders a new page. Of course the downside to this approach stems from the fact that, for each page load, all of its assets - scripts, stylesheets, images, etc. - must be re-loaded. Though browsers and servers have made great caching strides over the years to make this process as efficient as possible, it’s still unavoidably time-consuming.
 
-### Option 2: Client-Side
+### 2. Client-Side
 
 Option number two is to instead render on the client-side. With this approach, the server-side portion of your application functions more as an API backend. It communicates with the database and responds to incoming AJAX requests. With an SPA, until the JavaScript kicks in, you’ll see nothing but a blank white page. This is what we mean when we refer to rendering on the client-side. It’s all JavaScript - from the routing to the communication. And yet, again, the downside to this approach is…well, JavaScript. It has been trendy for as long as I’ve been a developer to make fun of JavaScript; I’m not one of those people. In fact, in its current state, I very much enjoy working with the language. But, we’ve all experienced the downsides of a JavaScript-driven application.
 
@@ -27,7 +29,7 @@ Option number two is to instead render on the client-side. With this approach, t
 *   Clap your hands if you’ve ever turned a simple web form into a confusing mess of JavaScript event listeners, validation hooks, and AJAX requests.
 {/tip}
 
-### Option 3: JavaScript Sprinkles
+### 3. JavaScript Sprinkles
 
 Option three is what I imagine most developers in the Laravel space have embraced. Or maybe “_embrace_” isn’t the correct word. It’s the option they “_fell into_.” My guess is you’ll instantly recognize this one. It’s that awkward combination of traditional server-side rendering with JavaScript sprinkled on top. With this approach, the initial page is rendered entirely by the server. But then your JavaScript hooks into the HTML and “_activates_” it to make things a bit more interactive.
 

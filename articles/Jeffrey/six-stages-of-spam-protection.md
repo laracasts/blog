@@ -21,7 +21,7 @@ One day, however, you wake up, check in on the forum, and notice your first piec
 
 Damn it. _They found us. I don’t know how, but they found us._
 
-#### Keyword Censoring
+### Keyword Censoring
 
 You shrug it off. No big deal. Perhaps some basic keyword validation will do the trick. In Laravel, we can easily whip up a custom validation rule:
 
@@ -40,7 +40,7 @@ Stage 2
 
 Spammers are like dinosaurs: life finds a way. Your basic keyword string checker didn’t account for clever formatting, like “_MEGA%%VID%EO Download H%D Link._” So once again, you wake up to a fresh pot of spam. Back to the drawing board.
 
-#### Email Confirmation
+### Email Confirmation
 
 Perhaps the next step isn’t validation, but instead email confirmation. You can’t participate in my forum until you’ve confirmed your email address. This should get around all the [adsfasfaasfadsf@domain.com](mailto:adsfasfaasfadsf@domain.com) signups you’re suddenly seeing.
 
@@ -63,7 +63,7 @@ You’ll soon begin to encounter spam written in certain foreign languages. What
 
 Drop whatever projects you had lined up for the morning. We need to fix this.
 
-#### Language Detection
+### Language Detection
 
 It’s time to spend the next hour researching how to validate against particular languages. Funnily enough, the search results return a link to your very own forum. You find a thread that recommends the following regular expression.
 
@@ -111,7 +111,7 @@ Don’t rest on your laurels too long. The next stage - and problem - stems, not
 
 Now you’re surely thinking to yourself, “_But why? What’s the point?_” Like so many things in life, the answer is a simple one: “_To see if they can._” Rule number one: assume the worst. People are not inherently good.
 
-#### Throttling
+### Throttling
 
 Less chipper than your former self, you return to your codebase in search of a solution. Perhaps I should limit the frequency at which you may create new threads or replies. The same user replying multiple times in a single minute is surely a sign of malicious intent. …That, or Red Bull.
 
@@ -175,13 +175,15 @@ You set your bags down, reach into your pocket, and secretly check (so as to avo
 
 “_Sorry, honey. I have to deal with this._” you shamefully remark to your spouse. With pep in your step, you make your way to your assigned seat, pull out your laptop, and quickly boot up your code editor. The flight doesn’t take off for 25 minutes. **There’s still time! I can fix this.**
 
-#### Honeypots
+### Honeypots
 
 Perhaps we should be more thoughtful. Is there a way to trick these bots, so as to separate them from the submissions of our active users?
 
 The answer, as it turns out, is yes! Honeypots to the rescue. Luckily, it’s a simple-enough technique that we should be able to implement before the plane lifts off…if we remain focused.
 
-> A **honeypot** is a pattern or technique that involves adding invisible inputs to your form. A bot will scan your form, encounter these fields, and fill them in to the best of its ability.
+{definition=honeypot}
+A **honeypot** is a pattern or technique that involves adding invisible inputs to your form. A bot will scan your form, encounter these fields, and fill them in to the best of its ability.
+{/definition}
 
 Now, all we must do is validate if these particular request fields are present. If so, ding ding ding: we have a spammer on our hands. No doubt about it. Abort, abort!
 

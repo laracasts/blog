@@ -1,5 +1,5 @@
 ---
-title: How to Produce High-Quality Screencasts
+title: How to Produce High-Quality Programming Screencasts
 description: I’ve kept a somewhat scatter-brained version of the following text as a Laracasts instructor onboarding Trello card for years now, but it occurred to me that it might prove useful to others who hope to create educational content.
 author: Jeffrey Way
 ---
@@ -8,9 +8,9 @@ I’ve kept a somewhat scatter-brained version of the following text as a Laraca
 
 I’ve of course extended that Trello card with plenty of fluff, and no less than three pop culture references for your reading pleasure. So, if you’re ready, let’s make like [Leeroy Jenkins](https://www.youtube.com/watch?v=mLyOj_QD4a4) and do this.
 
-{panel}
-[\- Jump to all recommended screencasting purchases.](#all-recommended-products)
-{/panel}
+{info}
+If you'd rather skip over the reading and scroll to the recommended screencast purchases, [click here.](#all-recommended-products)
+{/info}
 
 What Went Wrong?
 ----------------
@@ -29,7 +29,7 @@ But that was 2006. To put things into perspective, at that time, Netflix streami
 
 Supply and demand is the key here. Ask me how many times I’ve endured a noisy, low-resolution screencast in the last five years. The answer is, of course, zero times. In the year 2022, the supply is through the roof. Everyone has a hot new course or six-hour A-Z training video on YouTube. It is no longer acceptable or appropriate to publish a lazy, low-quality screencast and expect anything more than, well, two views.
 
-> If you’re serious about this, then you’ll need to put your money where your mouth is. As they say, if you’re going to do it, then do it right.
+> **If you’re serious about this**, then you’ll need to put your money where your mouth is. As they say, if you’re going to do it, then do it right.
 
 The minimum barrier to entry is a microphone and screencast editing software. Let’s start with the mic.
 
@@ -84,7 +84,11 @@ Your old USB-powered microphone probably included its own stand. This new SM7B d
 
 ### Audio Setup Complete
 
-So, yeah, your audio setup can get pricey very quickly. If your budget is minimal, stick with a USB-microphone. Who knows if you’ll still be recording videos six months from now. Keep it cheap and simple until you’re certain that the additional expense and complexity is worth the effort. Like programming, complexity must be introduced through necessity.
+So, yeah, your audio setup can get pricey very quickly
+
+{tip}
+If your budget is minimal, stick with a USB-microphone. Who knows if you’ll still be recording videos six months from now. Keep it cheap and simple until you’re certain that the additional expense and complexity is worth the effort. Like programming, complexity must be introduced through necessity.
+{/tip}
 
 Record Your Screen
 ------------------

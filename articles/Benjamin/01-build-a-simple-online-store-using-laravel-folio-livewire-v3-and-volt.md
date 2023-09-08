@@ -1,6 +1,7 @@
 ---
-title: Build a simple online store using Laravel Folio
-description: What makes the Laravel ecosystem magical is that there are always new things to learn and experiment with. Some of the latest additions to it are Laravel Folio and Volt.
+title: Build a Simple Online Store using Laravel Folio and Volt
+description: What makes the Laravel ecosystem magical is that there are always new things to learn and experiment with. Some of the latest additions to it are Laravel Folio and Volt. Embracing these new tools and principles can enhance your productivity and transform how you build web applications with Laravel. Let me show you by building a simple online store.
+author: Benjamin Crozat
 ---
 
 What makes the Laravel ecosystem magical is that there are always new things to learn and experiment with. Some of the latest additions to it are Laravel Folio and Volt.
@@ -39,7 +40,7 @@ If you see Laravel's welcome page on http://127.0.0.1:8000, we can now move on a
 
 ## Install Laravel Folio
 
-Laravel Folio is a new approach to routing. Instead of declaring routes via a `routes.php` file, we instead create views that follow a particular naming convention.
+Laravel Folio is a new approach to routing. Instead of declaring routes via a `routes.php` file, we create views that follow a particular naming convention.
 
 Let's start by installing the package:
 
@@ -47,13 +48,13 @@ Let's start by installing the package:
 composer require laravel/folio
 ```
 
-Once done, we must add the Service Provider (from which you can customize Folio's behavior and add middlewares), and create the *pages* directory that will be used by Folio:
+Once done, we must add the Service Provider (from which you can customize Folio's behavior and add middlewares), and create the `pages` directory that will be used by Folio:
 
 ```bash
 php artisan folio:install
 ```
 
-The new directory is *resources/views/pages*.
+The new directory is `resources/views/pages`.
 
 ## Install Livewire v3 and Volt
 
@@ -61,7 +62,9 @@ The new directory is *resources/views/pages*.
 If you've never tried Livewire before, I suggest leveling up your skills first. Volt will be of little use to you without at least some Livewire knowledge.
 {/info}
 
-Volt makes single-file components with Livewire v3 possible, and also adds an optional composition API.
+{definition}
+**Volt** makes single-file components with Livewire v3 possible, and also adds an optional composition API.
+{/definition}
 
 When installed into a project, it also includes Livewire v3 since it's entirely dependent on it. Let's install it using the following command:
 
@@ -75,7 +78,7 @@ Then, we finalize the process by publishing Volt's Service Provider:
 php artisan volt:install
 ```
 
-Since we want to leverage Laravel Folio to its fullest, go into _app/Providers/VoltServiceProvider.php_ and swap the two items in the array used in the `mount()` method:
+Since we want to leverage Laravel Folio to its fullest, go into `app/Providers/VoltServiceProvider.php` and swap the two items in the array used in the `mount()` method:
 
 ```diff
 namespace App\Providers;
@@ -101,11 +104,11 @@ This way, Volt will understand that we want to create new components in the page
 
 ## Confirm that Laravel Folio is operational
 
-To create your first page, I suggest you remove *resources/views/welcome.blade.php* as well as the route declaration in *routes/web.php*. Thanks to Laravel Folio, we won't need that anymore.
+To create your first page, I suggest you remove `resources/views/welcome.blade.php` as well as the route declaration in `routes/web.php`. Thanks to Laravel Folio, we won't need that anymore.
 
-Then, go into the freshly created *resources/views/pages* folder. Inside is a `.gitkeep` that you can remove. Create `index.blade.php` and add a bit of temporary text.
+Then, go into the freshly created `resources/views/pages` folder. Inside is a `.gitkeep` that you can remove. Create `index.blade.php` and add a bit of temporary text.
 
-```blade
+```html
 <h1>Hello, world!</h1>
 ```
 
@@ -120,7 +123,7 @@ Similar to the standard `route:list` command, you can also run `php artisan foli
 
 For the sake of simplicity, we'll use an incredibly simple layout. The code you see below is valid HTML that browsers can render. The [Tailwind CSS Play CDN](https://tailwindcss.com/docs/installation/play-cdn) will enable us to skip over the typical compilation process for a normal project. As you may imagine, it's not recommended to do this is production.
 
-Create a file in _resources/views/components/layouts/app.blade.php_ and paste this code:
+Create a file in `resources/views/components/layouts/app.blade.php` and paste this code:
 
 ```php
 <html class="bg-gray-50 text-gray-600">
@@ -210,23 +213,18 @@ $remove = function () {
 </x-layouts.app>
 ```
 
-Let's break down the code:
+#### Break it Down:
 
-1. **Laravel Folio automatically created a route for the cart**. Again, you can see it by
-   running `php artisan folio:list`.
-2. **The component is wrapped inside the `@volt` directive instead of a distinct file inside _resources/views/livewire_.
-   That makes it an anonymous component.**
-3. Instead of setting up a database, migrations, models, factories, etc., we use the cache to store the number of items.
-   That way, we can focus on learning. Obviously, this isn't how you would do it in production.
+Take a moment to review the code above. Here are a few things worth noting:
+
+1. Laravel Folio automatically created a route for the cart. Again, you can see it by running `php artisan folio:list`.
+2. The component is wrapped inside the `@volt` directive instead of a distinct file inside `resources/views/livewire`. That makes it an anonymous component.
+3. Instead of setting up a database, migrations, models, factories, etc., we use the cache to store the number of items. That way, we can focus on learning. Obviously, this isn't how you would do it in production.
 4. The items are randomly generated using the `fake()` helper. This is a huge gain of time.
-5. I provided a basic layout with a button to remove the items. **When clicked, it calls a Livewire method
-   named `remove()`**. In Volt's new declarative API, we define the "remove" method as a closure inside a variable.
-6. **The Livewire code is defined between PHP tags.** You cannot use the `@php` directive for setting up anything
-   related to Volt.
-7. **We define the initial state of `$count` using the `state()` helper.** It contains a closure that fetches the value
-   from the cache.
-8. In the `remove()` method, we make sure the count is greater than 0 before decrementing it. Then, we store the new value
-   in the cache.
+5. I provided a basic layout with a button to remove the items. When clicked, it calls a Livewire method named `remove()`. In Volt's new declarative API, we define the `remove()` method as a closure inside a variable.
+6. The Livewire code is defined between PHP tags. You cannot use the `@php` directive for setting up anything related to Volt.
+7. We define the initial state of `$count` using the `state()` helper. It contains a closure that fetches the value from the cache.
+8. In the `remove()` method, we make sure the count is greater than 0 before decrementing it. Then, we store the new value in the cache.
 
 ![Cart](https://github.com/laracasts/blog/assets/3613731/e147a291-6ef2-4dff-8271-35b31ccb245a)
 
@@ -235,15 +233,15 @@ cart!
 
 ## Create the item component
 
-Our next step is to create an "item" component. It represents individual products available for purchase in our store.
-This time, we'll use Livewire instead of Volt to create the component. We want it inside the *resources/views/livewire* folder.
+Our next step is to create an `Item` component. It represents individual products available for purchase in our store.
+This time, we'll use Livewire instead of Volt to create the component. We want it inside the `resources/views/livewire` folder.
 
 ```bash
 php artisan make:livewire Item
 ```
 
-Once the command executes, remove the file created in *app/Livewire/Item.php* and navigate to
-_resources/views/livewire/item.blade.php_. Then, add this code:
+Once the command executes, remove the file created in `app/Livewire/Item.php` and navigate to
+`resources/views/livewire/item.blade.php`. Then, add this code:
 
 ```php
 <?php
@@ -286,13 +284,13 @@ $add = function () {
 
 In this component:
 
-1. We have a "Add to Cart" button that calls the `add()` method when clicked.
+1. We have an _"Add to Cart"_ button that calls the `add()` method when clicked.
 2. A state variable named `$done` is set to `true` to disable the button and display a "Added" message instead.
 3. The `add()` function dispatches an event that indicates a product has been added. The component that waits for this event (the cart preview) will increment the value in the cache (that's what we'll do in the next step).
 
 ## Create the cart preview component
 
-The cart preview component will be a mini representation of the user's shopping cart, allowing them to quickly view how many items they've added without navigating to the cart page.
+The cart preview component will be a mini-representation of the user's shopping cart, allowing them to quickly view how many items they've added without navigating to the cart page.
 
 Here's how we can create it:
 
@@ -300,7 +298,7 @@ Here's how we can create it:
 php artisan make:livewire CartPreview
 ```
 
-Now, edit _resources/views/pages/cart-preview.blade.php_:
+Now, edit `resources/views/pages/cart-preview.blade.php`:
 
 ```php
 <?php
@@ -332,7 +330,7 @@ In this component:
 
 ## Create the homepage
 
-The homepage is the simplest piece of code we'll have to write. It's just laying out the components we wrote earlier. Put the following code in _resources/views/pages/index.blade.php_:
+The homepage is the simplest piece of code we'll have to write. It's just laying out the components we wrote earlier. Put the following code in `resources/views/pages/index.blade.php`:
 
 ```php
 <x-layouts.app>
@@ -349,7 +347,7 @@ The homepage is the simplest piece of code we'll have to write. It's just laying
 ```
 
 1. This is a simple Blade component.
-2. We create an array of 9 items using the [`range()`](https://www.php.net/range) function to be able to display 9 items. Remember, they're all randomly generated.
+2. We create an array of nine items using the [`range()`](https://www.php.net/range) function. Remember, they're all randomly generated.
 
 ![Homepage](https://github.com/laracasts/blog/assets/3613731/eae2a9ac-38ac-42bd-8f34-e976b2242094)
 
@@ -358,7 +356,7 @@ The homepage is the simplest piece of code we'll have to write. It's just laying
 Our online store is already quite impressive. But what if I told you we could enhance it with minimal effort? Livewire v3 comes with a new HTML attribute named [`wire:navigate`](https://livewire.laravel.com/docs/navigate#basic-usage). When
 used, it will only fetch the new HTML and replace the current one, instead of reloading the whole page.
 
-Let's add the `wire:navigate` attribute on the link to the cart in *resources/views/livewire/cart-preview.blade.php*:
+Let's add the `wire:navigate` attribute on the link to the cart in `resources/views/livewire/cart-preview.blade.php`:
 
 ```diff
 -<a href="/cart">
@@ -367,7 +365,7 @@ Let's add the `wire:navigate` attribute on the link to the cart in *resources/vi
 </a>
 ```
 
-Before you can see for yourself how it feels, don't forget the link that goes back to the homepage in *resources/views/pages/cart.blade.php*:
+Before you can see for yourself how it feels, don't forget the link that goes back to the homepage in `resources/views/pages/cart.blade.php`:
 
 ```diff
 -<a href="/">
@@ -384,8 +382,10 @@ We've explored how to integrate these three powerful packages to create a user-f
 
 If you want to spend more time on this code, here are a few areas of improvement:
 
+{tip}
 - Make all the components anonymous. They're still small, so why split them into multiple files? [Learn more on the official documentation.](https://livewire.laravel.com/docs/volt#anonymous-components)
 - Write tests for the components. [Learn more on the official documentation.](https://livewire.laravel.com/docs/volt#testing-components)
 - Volt components can also be used with the traditional [class-based API](https://livewire.laravel.com/docs/volt#class-based-volt-components). You can experiment with that too!
+{/tip}
 
 [Access the code of this tutorial on GitHub.](https://github.com/benjamincrozat/dummy-store)

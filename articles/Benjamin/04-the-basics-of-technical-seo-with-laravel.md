@@ -1,4 +1,7 @@
-# The basics of technical SEO with Laravel
+---
+title: The basics of technical SEO with Laravel
+description:
+---
 
 ## Technical SEO is only 20% of the job
 

@@ -15,7 +15,7 @@ Technical SEO may only be 20% of the job, but _it is necessary_. This article ta
 
 ## Avoid superstitions and fact check everything
 
-## Don't take the PageSpeed Insights test too seriously
+## Don't be religious about the PageSpeed Insights test
 
 ## Don't overthink meta tags, they won't help you rank higher
 

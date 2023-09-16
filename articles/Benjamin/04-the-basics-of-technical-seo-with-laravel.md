@@ -11,7 +11,7 @@ That being said, your website must tick a few boxes:
 - Search engines will be able to figure out what your pages are about.
 - They are also looking to rank pages offering a decent user experience (we will see later what this means).
 
-Technical SEO may only be 20% of the job, but _it is necessary_. This article targets developers who are tasked to make SEO-friendly projects.
+Technical SEO may only be 20% of the job, but _it is necessary_.
 
 ## Avoid superstitions and fact check everything
 

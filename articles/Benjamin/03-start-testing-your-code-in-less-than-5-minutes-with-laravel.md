@@ -1,64 +1,120 @@
 ---
 title: Start Testing Your Laravel Code in Less Than 5 Minutes
-description: Coding is fun, but debugging? Not so much. That's why testing is crucial for the success of your project. Let's break the ice once and for all!
+description: Coding is fun. But debugging? ...Not so much. That's why testing is crucial for the success of your projects. In this article, I will show you how easy it is to begin testing your Laravel applications.
+publish_date: "2023-09-19 10:00:00"
+author: Benjamin Crozat
 ---
 
-Coding is fun, but debugging? Not so much. That's why testing is crucial for the success of your project. I will show you how easy it is to start testing your Laravel applications. Let's break the ice once and for all!
+Coding is fun. But debugging? ...Not so much. That's why testing is crucial for the success of any non-trivial project. In this article, I will show you how easy it is to begin testing your Laravel applications. Let's break the ice once and for all!
 
-## Here's why you want to write tests for your projects
+## Why Write Tests?
 
-Writing tests for your projects is essential for various and very good reasons:
+Writing tests for your projects is essential for a variety of reasons, including:
 
-- **Fix basic bugs**: Before they ruin the experience for your users, you can catch and fix basic bugs during the development phase.
-- **More confidence for deployments**: With a well-tested application, you can deploy with confidence, knowing that your code is solid.
-- **Less time spent in your web browser or HTTP client**: Doing the same thing over and over manually can be time-consuming. Automated testing saves you a lot of time and effort.
-- **Happier customers**: A well-tested application leads to a smoother user experience, which results in happier customers and less churn.
-- **Happier clients**: Clients appreciate an application free of obvious bugs, just as in your sales pitch!
-- **Happier employer**: A well-tested, well-functioning application will make your employer happy as well. It shows professionalism and attention to detail. It can only be good for your career.
-
+{info}
+- **Fix Bugs**: Before they ruin the experience for your users, you can catch and fix basic bugs during the development phase.
+- **Deploy With Confidence**: With a well-tested application, you can deploy with confidence, knowing that your code is solid.
+- **Skip the Browser**: Doing the same thing over and over manually can be time-consuming. Automated testing saves you a lot of time and effort.
+- **Happier Customers**: A well-tested application leads to a smoother user experience, which results in happier customers and less churn.
+- **Happier Clients**: Clients appreciate an application free of obvious bugs, just as in your sales pitch!
+- **Happier Employer**: A well-tested, well-functioning application will make your employer happy as well. It shows professionalism and attention to detail. It can only be good for your career.
+  {/info}
+-
 ## Create a new project
 
-Creating a new project in Laravel with Pest is as simple as running a single command. Open your terminal and run:
+Scaffolding a new project in Laravel with Pest is as simple as running a single command. Open your terminal and run:
 
 ```bash
 laravel new hello-world --pest
 ```
 
-This will create a new Laravel project with Pest installed and ready to be used. Pest is based on PHPUnit, but focuses on simplicity. Using it will make it easier for newcomers to write tests.
+At the time of this writing, Laravel ships with PHPUnit, by default. However, [Pest](http://pestphp.com), which is based on PHPUnit, has increasingly grown in popularity in the last few years. Let's use the `--pest` flag to generate Pest-specific tests.
 
-`cd` into the newly created folder, make sure you can display Laravel's welcome page in your browser using whichever environment you like, and read to the next section!
+{definition}
+**Pest** is a testing framework with a focus on simplicity, meticulously designed to bring back the joy of testing in PHP.
+{/definition}
+
+`cd` into your new `hello-world` project, ensure that you successfully see Laravel's splash welcome page in the browser, and them move on to the next section!
 
 ## Make sure Pest can run
 
-Once the project is created, you can run your tests to make sure everything is working as expected.
+You can now execute the project's example tests to verify that everything is working as expected.
 
-Check out the _ExampleTest.php_ file in _tests/Feature_. It clearly states that it will test for the homepage to return a 200 HTTP status code.
+Have a look at the `tests/Feature/ExampleTest.php` file.
 
-Run your tests using the following command:
+```php
+<?php
+
+it('returns a successful response', function () {
+    $response = $this->get('/');
+
+    $response->assertStatus(200);
+});
+```
+
+Notice how the method name perfectly describes the intent of the test. Try to get in the habit of doing the same for your projects.
+
+Run your test suite using the following command:
 
 ```bash
 php artisan test
 ```
 
-Everything should be green. And if your environment was properly working, I bet 5 minutes was more than enough! If not, don't be discouraged. Spending some time in making sure your environment is correctly configured is a great investment.
+Everything should be green. Assuming that your environment is configured properly, we were able to install a fresh Laravel app, and run the initial test suite in just a few minutes. Not bad!
 
-Now, any moment something breaks during the process of rendering the home page, the test will fail. Try to change some code incorrectly, run `php artisan test` again, and you will see it for yourself.
+A basic test like this will ensure that, should something break during the rendering of the home page, the suite will properly fail. Let's try it out. Tweak `ExampleTest.php` to expect a different status code response. How about `302`?
 
-## Create a tested contact form
+```diff
+<?php
 
-Practice makes perfect. Let's see how we can write more advanced tests now that we saw how easy it is.
+it('returns a successful response', function () {
+    $response = $this->get('/');
 
-### Create the controller
+-    $response->assertStatus(200);
++    $response->assertStatus(302);
+});
+```
 
-To get started with our contact form, let's create a single-action controller by using the `--invokable` flag: 
+Run `php artisan test` again, and, yep, it fails as expected:
+
+```bash
+php artisan test
+  
+FAILED  Tests\Feature\ExampleTest > it returns a successful response
+Expected response status code [302] but received 200.
+Failed asserting that 302 is identical to 200.
+
+  at tests/Feature/ExampleTest.php:6
+      2▕
+      3▕ it('returns a successful response', function () {
+      4▕     $response = $this->get('/');
+      5▕
+  ➜   6▕     $response->assertStatus(302);
+      7▕ });
+      8▕
+
+
+  Tests:    1 failed, 1 passed (2 assertions)
+  Duration: 0.18s
+```
+
+## Real-Life Example
+
+Of course, practice makes perfect. In this next section, let's see how we might write some tests that are a bit more representative of a real-world application. We'll create a tested contact form that delivers an email to a recipient.
+
+### The Controller
+
+To get started with our contact form, we'll generate a `SendContactEmailController` controller.
 
 ```bash
 php artisan make:controller SendContactEmailController --invokable
 ```
 
-### Create the routes
+Notice that we're using the `--invokable` flag to create a single-action controller, or a controller that can only ever have a single action.
 
-Then, we must declare two routes: one that answers _GET_ requests on the _/contact_ path and displays the form, and the other using _POST_ that processes the user's input and sends the message:
+### The Routes
+
+Next, we should declare two RESTful routes to handle the form: one that responds to `GET` requests on the `/contact` path. This is where we'll display the form. Next, we listen for a `POST` request to `/contacts`. Here, we can receive the user's input and deliver the message.
 
 ```php
 use Illuminate\Support\Facades\Route;
@@ -68,21 +124,21 @@ Route::view('/contact', 'contact');
 Route::post('/contact', SendContactEmailController::class);
 ```
 
-### Create and set up the Mailable
+### Create the Mailer
 
-Creating a mailable is as easy as creating a controller using the following command:
+Creating a Laravel mailable is as simple as generating any other controller or model. We can use the `make:mail` command.
 
 ```bash
 php artisan make:mail ContactMail
 ```
 
-Then, let's modify it a bit with three properties. For that, we'll use constructor property promotion, which makes us write less code. Then, We need to build a new Envelope object and pass relevant information about the sender.
+Let's modify it a bit with three properties: `$from`, `$name`, and `$message`. In the example below, we're using constructor property promotion, which makes for slightly less code.
 
 ```php
 namespace App\Mail;
 
-…
 use Illuminate\Mail\Mailables\Address;
+use Illuminate\Mail\Mailables\Envelope;
 
 class ContactMail extends Mailable
 {
@@ -105,19 +161,19 @@ class ContactMail extends Mailable
 }
 ```
 
-### Create the form
+The nicely named `envelope()` method, as you might have guessed, is where we can customize the details for the email, such as the subject and from address.
 
-We're almost there. We now need to build the form to allow people to contact you. Nothing fancy there, just some fields (name, email, and message), a way to display individual errors if there are some, and the @csrf directive to protect us against Cross-Site Request Forgery.
+### Construct the Form
 
-Artisan doesn't have a command to create views, so I made you one that you can just copy and paste.
+We're almost there. We should now build the contact form, itself. Don't worry; there's nothing unique or fancy here. We'll add fields for a name, email, and message.
 
 ```bash
-touch resources/views/contact.blade.php
+php artisan make:view contact
 ```
 
-Then, in _resources/views/contact.blade.php_, paste the form:
+That command should generate the file,  `resources/views/contact.blade.php`. Within it, paste the following HTML:
 
-```blade
+```php
 @if (session('status'))
     <p>{{ session('status') }}</p>
 @endif
@@ -147,15 +203,19 @@ Then, in _resources/views/contact.blade.php_, paste the form:
 </form>
 ```
 
-We are now just missing some code in the controller.
+You've likely written similar HTML countless times. Do note, however, that we're referencing Laravel's `@error()` directive to display validation error messages below each input. We also include the `@csrf` directive to protect against Cross-Site Request Forgery.
 
-### Send the email
+{definition}
+Cross-Site Request Forgery (**CSRF**) is an attack that forces an end user to execute unwanted actions on a web application in which they’re currently authenticated
+{/definition}
 
-In the controller, we will write extremely simple code.
+### Send the Email
 
-1. We validate the user's input because we should never trust it.
-2. We send the email using the Mail Facade and a new instance of ContactMail, our mailable.
-3. Then, we redirect the user back with a status message (we are displaying it above the form).
+In the `SendContactEmailController` controller, we can write the necessary logic to send the email. We should handle three things within this controller action:
+
+1. **Validate** the user's input, because we should never trust it.
+2. **Send** the email using the `Mail` Facade, and the `ContactMail` mailable.
+3. **Redirect** the user to the previous page with a status message.
 
 ```php
 namespace App\Http\Controllers;
@@ -185,7 +245,7 @@ class SendContactEmailController extends Controller
 }
 ```
 
-### Create the tests
+### Write the Tests
 
 Creating new tests in Laravel is as easy as using the following command. Don't forget the `--pest` option.
 
@@ -193,7 +253,11 @@ Creating new tests in Laravel is as easy as using the following command. Don't f
 php artisan make:test SendContactEmailTest --pest
 ```
 
-Then, we can finally start writing tests making sure the form is displayed without errors, another test for the happy path of sending the email, and other tests for making sure our validation rules work.
+Now, we can finally prepare the tests for our contact form.
+
+#### The Contact Page Works
+
+Let's start with a simple test which ensures that a `200` status code is returned when visiting the `/contact` page.
 
 ```php
 use App\Mail\ContactMail;
@@ -201,10 +265,17 @@ use Illuminate\Support\Facades\Mail;
 use function Pest\Laravel\{get,post};
 
 test('the contact page works', function () {
-    get('/contact')
-        ->assertOk();
+    get('/contact')->assertOk();
 });
+```
 
+Easy! We've written our first test to verify that the contact page is accessible. This test makes a _GET_ request to the _"/contact"_ route and asserts that the response status is OK (`200`).
+
+#### The Contact Email Can Be Sent
+
+Next, we'll confirm that the contact email can be sent.
+
+```php
 test('the contact email can be sent', function () {
     Mail::fake();
 
@@ -217,7 +288,20 @@ test('the contact email can be sent', function () {
 
     Mail::assertSent(ContactMail::class);
 });
+```
 
+- We first fake the `Mail` facade to prevent actual emails from being sent, and to assert that an email was sent.
+- We then make a `POST` request to the `"/contact"` route with a randomly generated fake name, email, and message.
+- We assert that the request is redirected back.
+- Finally, we assert that the mailable `ContactMail` was sent.
+
+We're at green! Let's keep going.
+
+#### The Contact Email Requires a Name
+
+We should now test that the contact email requires a name, a valid email, and a message.
+
+```php
 test('the contact email requires a name', function () {
     post('/contact', [
         'email' => fake()->safeEmail(),
@@ -227,33 +311,29 @@ test('the contact email requires a name', function () {
 });
 
 test('the contact email requires a valid name', function () {
-    …
+    // rinse and repeat...
 });
-
-…
 ```
 
-1. "Test the contact page works":
-    - We write our first test to check if the contact page is accessible. This test makes a _GET_ request to the _"/contact"_ route and asserts that the response status is OK (200).
-2. "Test the contact email can be sent":
-    - The next test is to ensure that the contact email can be sent. We first fake the Mail facade to prevent actual emails from being sent and to assert that an email was sent.
-    - We then make a _POST_ request to the _"/contact"_ route with a randomly generated fake name, email, and message.
-    - We assert that the request is redirected back.
-    - Finally, we assert that the mailable `ContactMail` was sent.
-3. "Test the contact email requires a name":
-    - The final test ensures that the "name" field is required to send a contact email.
-    - We make a POST request to the _"/contact"_ route with only a fake email and message (no name).
-    - We then assert that the response is invalid and that the "name" field is required.
+- We make a POST request to the `"/contact"` route with only a fake email and message (no name).
+- We then assert that the response is invalid and that the `name` field is required.
 
 ## Be pragmatic when writing tests
 
-My strategy when writing tests has been the same for years:
-1. Write for all the happy paths. An example of a happy path would be "the contact email can be sent."
-2. Write for the obvious unhappy paths like "the contact email requires a name."
-3. That's it. Don't put too much effort into writing tests if your app doesn't have users yet. It's difficult to anticipate what could go wrong and your time and energy could be invested better elsewhere. Write tests for the bugs your users will actually encounter. Because let's face it, no software is flawless.
+My strategy for writing tests has been the same for years:
 
-## The case of untested existing projects
+{tip}
+1. Write for all the happy paths. A happy path represents the best-case, expected path through your code.
+2. Write for the obvious unhappy paths. Expect the unexpected. This is why we prepare tests for missing inputs.
+3. Write tests for the bugs your users encounter. These are referred to as **regression tests**. Write the bug as a test, fix it, return to green, and ensure that it never happens again.
+   {/tip}
 
-Existing and successful projects are usually big, and I stumbled upon many of them during my freelance career. Usually, things are so bad that even a basic test that checks for the 200 HTTP code may not work. But you can try anyway! Baby steps and sustained efforts can change things for the better.
+## We've Got You Covered
 
-And if Laravel's feature tests are too time-consuming to write because of what I just said, you might want to take a look at [Laravel Dusk](https://laravel.com/docs/dusk). It uses a headless Google Chrome to help you test if your application works, from the perspective of your users and without any regard for the backend code.
+If you'd like to dig deeper, of course we have you covered at Laracasts. You might start with a beginning Pest course, such as [Pest From Scratch](https://laracasts.com/series/pest-from-scratch). Once you feel comfortable, and
+are ready to work on real-life applications, move on to [Pest-Driven Laravel](https://laracasts.com/series/pest-driven-laravel).
+
+1.
+2.
+
+Until next time!

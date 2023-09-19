@@ -98,7 +98,7 @@ Learn more on the official documentation: https://laravel.com/docs/routing#impli
 
 Laravel can magically inject dependencies into your code. OK, let me explain, because this sounds way more complicated than it is.
 
-You surely have delt with a request object in Laravel, right? And I bet you never had to create the instance yourself. Most of the time, you get it via your controller this way:
+You surely have dealt with a request object in Laravel, right? And I bet you never had to create the instance yourself. Most of the time, you get it via your controller this way:
 
 ```php
 <?php
@@ -114,7 +114,7 @@ class PostController extends Controller
 }
 ```
 
-But how does it work? Again, it's not magic. Using [PHP's reflection capabilities](https://www.php.net/manual/en/book.reflection.php) under the hood, Laravel automatically injects an instance of whatever you typehinted in your `store()` method (not just `Illuminate\Http\Request`).
+But how does it work? Again, it's not magic. Using [PHP's reflection capabilities](https://www.php.net/manual/en/book.reflection.php) under the hood, Laravel automatically injects an instance of whatever you type-hinted in your `store()` method (not just `Illuminate\Http\Request`).
 
 If you really want to, you can even make it happen in the constructor:
 
@@ -221,7 +221,7 @@ trait Conditionable
 }
 ```
 
-It's used accross may classes in the framework such as `Builder`, `Factory`, `Filesystem`, `Logger`, `PendingRequest`, `Carbon`, and many others to offers a way to conditionally apply logic using a fluent API instead of if statements.
+It's used across may classes in the framework such as `Builder`, `Factory`, `Filesystem`, `Logger`, `PendingRequest`, `Carbon`, and many others to offers a way to conditionally apply logic using a fluent API instead of if statements.
 
 One common use case is to use it with Eloquent's query builder. Instead of doing this:
 

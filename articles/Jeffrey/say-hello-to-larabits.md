@@ -2,6 +2,7 @@
 title: Say Hello to Larabits
 description: Fun fact. Laracasts originally launched back in 2013 as a collection of isolated video tutorials. One video, one technique, move on to something else. There wasn’t yet any concept of a series or course. But not long after the launch, I ran into a handful of hurdles.
 author: Jeffrey Way
+publish_date: "2021-08-11 10:49:28"
 ---
 
 Fun fact. Laracasts originally launched back in 2013 as a collection of isolated video tutorials. One video, one technique, move on to something else. There wasn’t yet any concept of a series or course. But not long after the launch, I ran into a handful of hurdles.

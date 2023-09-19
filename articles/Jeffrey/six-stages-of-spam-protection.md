@@ -1,14 +1,15 @@
 ---
 title: The 6 Stages of Spam Protection
-description: Launching and maintaining an increasingly popular forum requires nonstop attention on the developer’s part.
+description: Launching and maintaining an increasingly popular forum requires nonstop attention on the developer’s part. Sure, the initial forum launch went smoothly enough. And why wouldn't it? Nobody outside your immediate circle knows it even exists. People are generally good. Of course, they won’t take advantage of your new platform. Right?
 author: Jeffrey Way
+publish_date: "2020-11-17 13:52:39"
 ---
 
 Launching and maintaining an increasingly popular forum requires nonstop attention on the developer’s part.
 
-Sure, the initial forum launch went smoothly enough. And why wouldn’t it? Nobody outside of your immediate circle knows it even exists. At this stage, assuming the “happy path” is sufficient enough. Some basic form validation will do the trick. “_You must provide a title and description to create a new thread._”
+Sure, the initial forum launch went smoothly enough. And why wouldn't it? Nobody outside your immediate circle knows it even exists. At this stage, assuming the “happy path” is sufficient. Some basic form validation will do the trick. “_You must provide a title and description to create a new thread._”
 
-People are generally good. Of course they won’t take advantage of your new platform. Right?
+People are generally good. Of course, they won’t take advantage of your new platform. Right?
 
 Stage 1
 -------
@@ -143,7 +144,7 @@ Yay for Laravel’s custom validation rules. The gift that keeps on giving.
         }
     }
 
-This quick rule determines if the given user created a thread within the last two minutes. If so, that’s gonna be a no from us, dog. Let’s add this new rule to our primary validation logic.
+This quick rule determines if the given user created a thread within the last two minutes. If so, _that’s gonna be a no from us, dog_. Let’s add this new rule to our primary validation logic.
 
     request()->validate([
         'body' => [
@@ -181,7 +182,7 @@ Perhaps we should be more thoughtful. Is there a way to trick these bots, so as 
 
 The answer, as it turns out, is yes! Honeypots to the rescue. Luckily, it’s a simple-enough technique that we should be able to implement before the plane lifts off…if we remain focused.
 
-{definition=honeypot}
+{definition}
 A **honeypot** is a pattern or technique that involves adding invisible inputs to your form. A bot will scan your form, encounter these fields, and fill them in to the best of its ability.
 {/definition}
 

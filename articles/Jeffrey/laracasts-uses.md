@@ -2,6 +2,7 @@
 title: Laracasts Uses
 description: I often joke that, at my funeral, someone will ask, "Which syntax theme did he use?" Pick any Laracasts lesson and you’re bound to find at least one comment that ignores the subject matter of the video entirely, and instead focuses on what’s most important to us all... what theme and font is that?
 author: Jeffrey Way
+publish_date: "2022-03-31 10:27:21"
 ---
 
 I often joke that, at my funeral, someone will ask, "Which syntax theme did he use?" Pick any Laracasts lesson and you’re bound to find at least one comment that ignores the subject matter of the video entirely, and instead focuses on what’s most important to us all: what theme and font is that?

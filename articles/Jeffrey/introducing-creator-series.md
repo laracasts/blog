@@ -2,6 +2,7 @@
 title: Introducing CreatorSeries
 description: Most of us are surely familiar with the phrase, “Lost in translation.” But if not, it generally refers to words or concepts that lose their meaning or subtlety when translated from one language to another. The same is also true when “translating” or parsing educational content.
 author: Jeffrey Way
+publish_date: "2022-07-07 13:02:19"
 ---
 
 Most of us are surely familiar with the phrase, “Lost in translation.” But if not, it generally refers to words or concepts that lose their meaning or subtlety when translated from one language to another.

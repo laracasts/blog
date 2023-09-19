@@ -2,6 +2,7 @@
 title: 7 Things I Look For When Hiring
 description: Here’s a quiet truth that most small business owners I’m friendly with would surely agree with. When hiring, a certain percentage of job applications are instantly tossed in the trash. It sounds harsh. It is. But it’s also the truth.
 author: Jeffrey Way
+publish_date: "2021-07-15 14:46:57"
 ---
 
 Here’s a quiet truth that most small business owners I’m friendly with would surely agree with.

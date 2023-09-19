@@ -2,6 +2,7 @@
 title: How to Produce High-Quality Programming Screencasts
 description: I’ve kept a somewhat scatter-brained version of the following text as a Laracasts instructor onboarding Trello card for years now, but it occurred to me that it might prove useful to others who hope to create educational content.
 author: Jeffrey Way
+publish_date: "2022-08-31 12:50:44"
 ---
 
 I’ve kept a somewhat scatter-brained version of the following text as a Laracasts instructor onboarding Trello card for years now, but it occurred to me that it might prove useful to others who hope to create educational content.

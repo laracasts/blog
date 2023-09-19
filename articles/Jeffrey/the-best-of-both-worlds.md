@@ -2,6 +2,7 @@
 title: The Best of Both Worlds
 description: I’ve been thinking about writing this blog post for months. It was the light at the end of an increasingly long tunnel. "When this project is finally done,” I’d tell myself, "I’ll set aside one Friday afternoon, find a seat at the coffee shop nearest to my home, and write an announcement - to the small portion of the world who cares about such things - that Laracasts is officially an SPA."
 author: Jeffrey Way
+publish_date: "2021-06-18 22:14:46"
 ---
 
 I’ve been thinking about writing this blog post for months. It was the light at the end of an increasingly long tunnel. 

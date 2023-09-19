@@ -2,6 +2,7 @@
 title: Automated, Interactive Transcripts
 description: As you can imagine, Laracasts frequently receives requests for new courses and site features. One feature request in particular that often pops up is companion written tutorials for every video. It’s not a bad idea! In a perfect world, this would be a natural and perfect addition to the site. But, as always, there’s one big roadblock... time.
 author: Jeffrey Way
+publish_date: "2022-07-13 18:19:09"
 ---
 
 <p>As you can imagine, Laracasts frequently receives requests for new courses and site features. One feature request in particular that often pops up is companion written tutorials for every video. It’s not a bad idea! In a perfect world, this would be a natural and perfect addition to the site. But, as always, there’s one big roadblock: time.</p>

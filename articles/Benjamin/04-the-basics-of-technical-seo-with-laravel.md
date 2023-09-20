@@ -3,7 +3,7 @@ title: The basics of technical SEO with Laravel
 description: Technical SEO may be only one small part of the job, but it has to be done. Learn how to do it while avoiding obsolete preconceived ideas.
 ---
 
-## Technical SEO is only 20% of the job
+1. Technical SEO is only 20% of the job
 
 SEO is a content creation game. The more you write, the more are your chances to get traffic from search engines.
 
@@ -13,12 +13,12 @@ That being said, your website must tick a few boxes:
 
 Technical SEO may only be 20% of the job, but _it is necessary_.
 
-## Avoid superstitions and fact check everything
+2. Avoid superstitions and fact check everything
 
-## Don't be religious about the PageSpeed Insights test
+3. Don't be religious about the PageSpeed Insights test
 
-## Don't overthink meta tags, they won't help you rank higher
+4. Don't overthink meta tags, they won't help you rank higher
 
-## Google renders non-server-side rendered pages, but don't ditch SSR yet!
+5. Google renders non-server-side rendered pages, but don't ditch SSR yet!
 
-## Monitor for errors, because Google will hide you from search results in case of issues
+6. Monitor for errors, because Google will hide you from search results in case of issues

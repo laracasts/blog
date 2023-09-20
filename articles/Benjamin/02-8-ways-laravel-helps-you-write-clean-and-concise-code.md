@@ -3,9 +3,9 @@ title: 8 ways Laravel helps you write clean and concise code.
 description: The definition of clean code is subjective. It's often a source of heated debates between developers on the web. For this article, we will focus on features in Laravel that enable us to write less of it.
 ---
 
-The definition of clean code is subjective. It's often a source of heated debates between developers on the web. For this article, we will focus on features in Laravel that enable us to write less of it.
+The definition of clean code is subjective. It's often a source of heated debates between developers on the web. For this article, we will focus on features in Laravel that enable us to write less code.
 
-## Facades
+## 1. Facades
 
 Facades in Laravel are extremely controversial. Yet, they provide a straightforward interface to help you achieve your goals.
 
@@ -38,7 +38,7 @@ class FooController extends Controller
 }
 ```
 
-It's called Dependency Injection. Some people are comfortable with this pattern and it's perfectly fine to do it that way. But others, less familiar with it, might want to move forward on their projects and use something simpler in the meantime, like Facades:
+This design pattern is called Dependency Injection. Some people are comfortable with this pattern and it's perfectly fine to do it that way. But others, less familiar with it, might want to use something simpler in the meantime, like Facades:
 
 ```php
 <?php
@@ -56,13 +56,52 @@ class FooController extends Controller
 
 Oh, and before you skip to the next section, beware that using the `cache()` helper function is the same as calling the `Cache` Facade. Let's say it's just a matter of preference.
 
+Here's the Facade's code:
+
+```php
+namespace Illuminate\Support\Facades;
+
+class Cache extends Facade
+{
+    protected static function getFacadeAccessor()
+    {
+        return 'cache';
+    }
+}
+```
+
+And here's the `cache()` helper function's code:
+
+```php
+function cache(...$arguments)
+{
+    if (empty($arguments)) {
+        return app('cache');
+    }
+
+    if (is_string($arguments[0])) {
+        return app('cache')->get(...$arguments);
+    }
+
+    if (! is_array($arguments[0])) {
+        throw new InvalidArgumentException(
+            'When setting a value in the cache, you must pass an array of key / value pairs.'
+        );
+    }
+
+    return app('cache')->put(key($arguments[0]), reset($arguments[0]), $arguments[1] ?? null);
+}
+```
+
+As you can see, both are doing the same thing at the most basic level: calling the object that manages the cache stored in the container. (You probably also noticed that using `app('cache')` also does the same thing as `Cache::` and `cache()`.)
+
 Learn more on the official documentation: https://laravel.com/docs/10.x/facades#how-facades-work
 
-## Implicit Binding
+## 2. Implicit Binding
 
 Instead of manually fetching resources in the database, why don't you delegate it to Laravel?
 
-It happens in your *routes/web.php* file. You must change your way of declaring routes as follows:
+Implicit binding starts in your *routes/web.php* file. You must change your way of declaring routes as follows:
 
 ```diff
 -Route::get('/blog/{id}', [PostController::class, 'show']);
@@ -90,11 +129,11 @@ class PostController extends Controller
 }
 ```
 
-Obviously, under the hood, Laravel does request your database. But your code now looks decluttered and cleaner.
+Under the hood, Laravel queries your database. But this part is now hidden and your code looks decluttered.
 
 Learn more on the official documentation: https://laravel.com/docs/routing#implicit-binding
 
-## Automatic Injection
+## 3. Automatic Injection
 
 Laravel can magically inject dependencies into your code. OK, let me explain, because this sounds way more complicated than it is.
 
@@ -141,7 +180,7 @@ class PostController extends Controller
 
 This not only works in controllers, but also in console commands, jobs, or whatever else you'd need to.
 
-## Redirect Routes
+## 4. Redirect Routes
 
 Laravel's router contains a few surprises that will delight people who are always looking to unclutter their code.
 
@@ -167,7 +206,7 @@ Route::redirect('/old', '/new');
 
 Cool, huh?
 
-## View Routes
+## 5. View Routes
 
 In the same vein, Laravel can also accommodate you when you only want to create a route that serves a simple view. Instead of creating a controller or a closure-based route, use the `view()` method instead:
 
@@ -177,7 +216,7 @@ Route::view('/about', 'pages.about');
 
 The */about* path will now serve the view located in _resources/views/pages/about_.
 
-## Collections
+## 6. Collections
 
 [Collections](https://laravel.com/docs/collections) in Laravel are essentially a wrapper around arrays, providing a whole bunch of really useful methods for manipulating them, and a more consistent experience compared to native PHP functions.
 
@@ -197,7 +236,7 @@ $user->invoices()->get()->each->sendByEmail();
 
 Not only collections are more readable and concise, but also more intuitive. You will never ask yourself if the needle comes first or not again!
 
-## The Conditionable Trait
+## 7. The Conditionable Trait
 
 The Conditionable trait is a very simple piece of code that contains only two methods: `when()`, and `unless()`.
 
@@ -251,16 +290,26 @@ $models = Model::query()
 
 I like this a lot. What about you?
 
-## Numerous First-Party Packages
+## 8. Numerous First-Party Packages
 
 One of the greatest strengths of Laravel we still haven't talked about is its vast collection of [first](https://laravel.com/docs) and [third-party packages](https://packagist.org).
 
 These packages take care of common tasks, saving developers the nightmare of doing all the work from scratch. Imagine billing, authentication, debugging, feature flags, and so much more, just a `composer require` away.
 
-By leveraging the available packages, developers can defer responsibilities onto others who might have more experience, and who regularly work on the packages. This not only saves time and effort but also ensures that the codebase remains clean and concise.
+Here are some examples of popular official Laravel packages:
+- [Laravel Fortify](https://laravel.com/docs/fortify) is a backend implementation of all the authentication features you'd need for you app. Registration, login, password reset, profile updates, two-factor authentication, and more!
+- [Laravel Cashier](https://laravel.com/docs/billing) simplifies and handles paid subscriptions via Stripe for your next SaaS. It's such a time saver!
+- [Laravel Sanctum](https://laravel.com/docs/sanctum) makes API authentication for SPAs and mobile apps a breeze. It even enables you to offer token generation users who would like to consume your API as well.
+
+And some examples of popular third-party packages:
+- [spatie/laravel-permission](https://github.com/spatie/laravel-permission) is an incredibly popular third-party package for Laravel that adds permissions and roles management in your app. Spatie has **tons** of fantastic packages that will save you a staggering amount of time.
+- [barryvdh/laravel-debugbar](https://github.com/barryvdh/laravel-debugbar) adds a convenient interface to help you debug your project. With it, you can have clear overview of slow database queries, see how much time your app takes to render, how much RAM it consumes, and so much more.
+- [maatwebsite/excel](https://packagist.org/packages/maatwebsite/excel) lets you import or export data from Excel sheets. The package automatically handle performances so you can focus on building the features you need.
+
+By leveraging packages, developers can defer responsibilities onto others who might have more experience, and who regularly work on the packages. This not only saves time and effort but also ensures that the codebase remains clean and concise.
 
 And after all, why reinvent the wheel when there are experts who have already built and refined the components you need?
 
 ## Conclusion
 
-No matter how your coding style is, the only things that matter are results and having fun. Experiment with the `Conditionable` trait and see how it goes!
+No matter how your coding style is, the only things that matter are results and having fun. Experiment with all the different ways of writing code I mentionned here, and see how it goes!

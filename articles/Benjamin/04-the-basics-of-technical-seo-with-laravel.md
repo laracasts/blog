@@ -27,10 +27,16 @@ Let's review old beliefs tied to technical SEO:
 
 There are dozens of false beliefs that a lot of people still apply hoping to make the SEO gods happy. But you must never trust what you read outside of a search engine's documentation. Some employees are also good sources of truth and you can trust them for the most part.
 
-## 3. Don't be religious about the PageSpeed Insights test
+## 3. How to debunk false information about SEO
 
-## 4. Don't overthink meta tags, they won't help you rank higher
+Let's imagine your heard that performing well on social media boosts your rankings on Google. It's also called "social signals." Before going all-in on Facebook, Instagram, TikTok and others, you want to make sure this is true so you don't invest in something that won't bring any return on investment.
 
-## 5. Google renders non-server-side rendered pages, but don't ditch SSR yet!
+Work in progress…
 
-## 6. Monitor for errors, because Google will hide you from search results in case of issues
+## 4. Don't be religious about the PageSpeed Insights test
+
+## 5. Don't overthink meta tags, they won't help you rank higher
+
+## 6. Google renders non-server-side rendered pages, but don't ditch SSR yet!
+
+## 7. Monitor for errors, because Google will hide you from search results in case of issues

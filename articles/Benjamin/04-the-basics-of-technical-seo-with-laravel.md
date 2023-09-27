@@ -8,7 +8,7 @@ description: Technical SEO may be only one small part of the job, but it has to 
 SEO is a content creation game. The more you write, the more are your chances to get traffic from search engines.
 
 That being said, your website must tick a few boxes:
-- Search engines must be able to figure out what your pages are about.
+- Search engines must be able to figure out what your pages are about. There are multiple ways to make sure of it.
 - They are also looking to rank pages offering a decent user experience (we will see later what this means).
 
 Technical SEO may only be 20% of the job, but _it is necessary_.

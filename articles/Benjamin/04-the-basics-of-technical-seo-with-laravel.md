@@ -22,19 +22,19 @@ Some of the superstitions are based on:
 - Practices that were best a few years back, but are not used anymore. And some are even completely made up. Again, not knowing how their algorithm work helps spread incorrect information.
 
 Let's review old beliefs tied to technical SEO:
-- Using a meta tag for keywords like `<meta name=“keywords” content=“keyword 1, keyword 2, keyword 3” />` can make you rank better for the keywords you chose to target. It's obviously false and it's been ditched by search engines so many years ago!
+- Using a meta tag for keywords like `<meta name=“keywords” content=“keyword 1, keyword 2, keyword 3” />` can make you rank better for the keywords you chose to target. It's obviously false and it was ditched by search engines so many years ago!
 - Google cannot render JavaScript. This has been true for a while, but it's not anymore. Hence the need to fact-check everything because Google moves fast! (We will discuss this in more detail later because other search engines might not be as cutting-edge.)
 
 There are dozens of false beliefs that a lot of people still apply hoping to make the SEO gods happy. But you must never trust what you read outside of a search engine's documentation. Some employees are also good sources of truth and you can trust them for the most part.
 
-## 3. How to debunk false information about SEO
+## 3. Don't be religious about the PageSpeed Insights test
 
-Let's imagine you heard that performing well on social media boosts your rankings on Google. It's also called "social signals." Before going all-in on Facebook, Instagram, TikTok, and others, you want to ensure this is true so you don't invest in something that won't bring any return on investment.
+As a developer, your job is to ensure that your web pages load fast and offer a good user experience.
 
-## 4. Don't be religious about the PageSpeed Insights test
+Google created a benchmark called [PageSpeed Insights](https://pagespeed.web.dev) that measures what they call Core Web Vitals.
 
-## 5. Don't overthink meta tags, they won't help you rank higher
+## 4. Don't overthink meta tags, they won't help you rank higher
 
-## 6. Google renders non-server-side rendered pages, but don't ditch SSR yet!
+## 5. Google renders non-server-side rendered pages, but don't ditch SSR yet!
 
-## 7. Monitor for errors, because Google will hide you from search results in case of issues
+## 6. Monitor for errors, because Google will hide you from search results in case of issues

@@ -17,4 +17,4 @@ author: Benjamin Crozat
 
 ## 6. Choose your cache driver wisely
 
-## 7. Take caching to the next level and speed up your production environment
+## 7. Speed up your production environment with more caching
